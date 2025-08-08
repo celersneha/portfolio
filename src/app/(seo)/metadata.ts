@@ -144,9 +144,6 @@ export const defaultMetadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 export const structuredData = {
@@ -154,7 +151,7 @@ export const structuredData = {
   "@type": "Person",
   name: siteConfig.author.name,
   url: siteConfig.url,
-  image: `${siteConfig.url}/profile-image.jpg`,
+  image: `${siteConfig.url}/og-image.png`,
   description: siteConfig.description,
   jobTitle: "Full Stack Web Developer",
   worksFor: {
@@ -163,8 +160,8 @@ export const structuredData = {
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Your City",
-    addressCountry: "Your Country",
+    addressLocality: "Indore",
+    addressCountry: "India",
   },
   email: siteConfig.author.email,
   sameAs: [
@@ -174,7 +171,7 @@ export const structuredData = {
   ],
   alumniOf: {
     "@type": "EducationalOrganization",
-    name: "Your University",
+    name: "Acropolis Institute of Technology and Research",
   },
   knowsAbout: [
     "Web Development",
@@ -184,6 +181,6 @@ export const structuredData = {
     "Next.js",
     "JavaScript",
     "TypeScript",
-    "UI/UX Design",
+    "Langchain",
   ],
 };
