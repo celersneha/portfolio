@@ -144,6 +144,9 @@ export const defaultMetadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "IANU7tJOZ8duM6yXQwKjzF7YQml50jSng7SVGHo3du0",
+  },
 };
 
 export const structuredData = {
