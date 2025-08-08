@@ -168,12 +168,7 @@ const structuredData = {
     "Chrome Extensions",
     "AI Integration",
   ],
-  award: [
-    "React Mastery Certification [CodProg]",
-    "NPTEL Certification in C++",
-    "NPTEL Certification in C",
-    "1st Runner-up, Learn and Win 2022 (IIST)",
-  ],
+
   gender: "Female",
   nationality: "Indian",
 };
