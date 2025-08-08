@@ -1,56 +1,21 @@
-# Allow all bots by default
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
-# Googlebot specific rules
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Bingbot specific rules
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-
-# Yahoo Slurp
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-# DuckDuckGo bot
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# Baidu
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
-# Yandex
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
-
-# Social media bots
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-# Block unwanted SEO scrapers
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-# Sitemap
 Sitemap: https://snehasharma.me/sitemap.xml
 
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
 
+User-agent: Bingbot  
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl-delay for less important bots
+User-agent: *
+Crawl-delay: 1
