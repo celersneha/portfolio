@@ -130,13 +130,9 @@ const structuredData = {
   "@type": "Person",
   name: siteConfig.author.name,
   url: siteConfig.url,
-  image: `${siteConfig.url}/profile-image.jpg`,
+  image: `${siteConfig.url}/og-image.png`,
   description: siteConfig.description,
   jobTitle: "Full Stack Web Developer",
-  worksFor: {
-    "@type": "Organization",
-    name: "Freelance",
-  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Indore",
