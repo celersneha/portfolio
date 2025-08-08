@@ -51,9 +51,7 @@ Host: https://sneha-sharma-portfolio.vercel.app
 Host: https://snehasharma.me
 
 # Sitemaps
-Sitemap: https://sneha-sharma-portfolio.vercel.app/sitemap.xml
-Sitemap: https://sneha-sharma-portfolio.vercel.app/sitemap-0.xml
-Sitemap: https://snehasharma.me/sitemap-0.xml
+Sitemap: https://snehasharma.me/sitemap.xml
 
 # Additional directives
 Cache-control: public, max-age=86400

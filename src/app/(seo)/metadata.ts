@@ -4,12 +4,13 @@ export const siteConfig = {
     "Sneha Sharma - MERN Stack Developer | Next.js Expert | Building Scalable Web Applications",
   description:
     "Experienced MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
-  url: "https://sneha-sharma-portfolio.vercel.app",
-  ogImage: "https://sneha-sharma-portfolio.vercel.app/og-image.jpg",
+  url: "https://snehasharma.me",
+  ogImage: "https://snehasharma.me/og-image.png",
   keywords: [
     "MERN Stack Developer",
     "Next.js Developer",
     "React.js Developer",
+    "Langchain Developer",
     "Node.js Developer",
     "Full Stack Developer",
     "JavaScript Expert",
@@ -41,9 +42,9 @@ export const siteConfig = {
   ],
   author: {
     name: "Sneha Sharma",
-    email: "snehasharma.contact@gmail.com",
+    email: "snehav2109@gmail.com",
     twitter: "@snehasharma",
-    linkedin: "https://linkedin.com/in/sneha-sharma",
+    linkedin: "https://linkedin.com/in/ss0807",
     github: "https://github.com/SnehaSharma245",
     phone: "+91 87705 79552",
     location: "Indore, Madhya Pradesh, India",
@@ -63,10 +64,10 @@ export const siteConfig = {
     ],
   },
   social: {
-    twitter: "https://twitter.com/snehasharma",
-    linkedin: "https://linkedin.com/in/sneha-sharma",
+    twitter: "https://twitter.com/SnehaDevs",
+    linkedin: "https://linkedin.com/in/ss0807",
     github: "https://github.com/SnehaSharma245",
-    email: "snehasharma.contact@gmail.com",
+    email: "snehav2109@gmail.com",
   },
   projects: [
     {
@@ -145,8 +146,6 @@ export const defaultMetadata = {
   },
   verification: {
     google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
   },
 };
 
@@ -157,7 +156,7 @@ export const structuredData = {
   url: siteConfig.url,
   image: `${siteConfig.url}/profile-image.jpg`,
   description: siteConfig.description,
-  jobTitle: "Frontend Developer",
+  jobTitle: "Full Stack Web Developer",
   worksFor: {
     "@type": "Organization",
     name: "Freelance",
@@ -180,6 +179,7 @@ export const structuredData = {
   knowsAbout: [
     "Web Development",
     "Frontend Development",
+    "Backend Development",
     "React",
     "Next.js",
     "JavaScript",
