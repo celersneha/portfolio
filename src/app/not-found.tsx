@@ -1,12 +1,7 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
-import { Metadata } from "next";
-import { generateSEOMetadata } from "@/components/SEO";
-
-export const metadata: Metadata = generateSEOMetadata({
-  title: "Page Not Found",
-  description: "The page you're looking for doesn't exist.",
-});
 
 export default function NotFound() {
   return (
