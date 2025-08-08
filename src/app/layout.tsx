@@ -12,15 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// SEO Configuration
-const siteConfig = {
-  name: "Sneha Sharma",
-  title:
-    "Sneha Sharma - Full Stack Developer | Next.js Expert | Building Scalable Web Applications",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://snehasharma.me"),
+  title: {
+    default: "Sneha Sharma",
+    template: "%s | Sneha Sharma",
+  },
   description:
     "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
-  url: "https://snehasharma.me",
-  ogImage: "https://snehasharma.me/og-image.png",
   keywords: [
     "Sneha Sharma Web Developer",
     "Web Developer Indore",
@@ -48,65 +47,16 @@ const siteConfig = {
     "Tailwind CSS",
     "TypeScript",
     "React Mastery",
-    "NPTEL Certified",
     "Software Engineer India",
     "Web Application Developer",
     "Scalable Applications",
     "High Performance Apps",
   ],
-  author: {
-    name: "Sneha Sharma",
-    email: "snehav2109@gmail.com",
-    twitter: "@SnehaDevs",
-    linkedin: "https://linkedin.com/in/ss0807",
-    github: "https://github.com/SnehaSharma245",
-    phone: "+91 87705 79552",
-    location: "Indore, Madhya Pradesh, India",
-  },
-};
-
-// Metadata for SEO
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
-  creator: siteConfig.author.name,
-  publisher: siteConfig.author.name,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: siteConfig.url,
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.title,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: siteConfig.author.twitter,
+  authors: [{ name: "Sneha Sharma", url: "https://snehasharma.me" }],
+  creator: "Sneha Sharma",
+  publisher: "Sneha Sharma",
+  verification: {
+    google: "IANU7tJOZ8duM6yXQwKjzF7YQml50jSng7SVGHo3du0",
   },
   robots: {
     index: true,
@@ -115,62 +65,139 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       "max-video-preview": -1,
-      "max-image-preview": "large" as const,
+      "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "IANU7tJOZ8duM6yXQwKjzF7YQml50jSng7SVGHo3du0",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://snehasharma.me",
+    siteName: "Sneha Sharma - Full Stack Developer",
+    title:
+      "Sneha Sharma - Full Stack Developer | Next.js Expert | Building Scalable Web Applications",
+    description:
+      "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sneha Sharma - Full Stack Developer Portfolio",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@SnehaDevs",
+    creator: "@SnehaDevs",
+    title:
+      "Sneha Sharma - Full Stack Developer | Next.js Expert | Building Scalable Web Applications",
+    description:
+      "Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://snehasharma.me",
+  },
+  category: "technology",
 };
 
-// Structured Data for Google
-const structuredData = {
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: siteConfig.author.name,
-  url: siteConfig.url,
-  image: `${siteConfig.url}/og-image.png`,
-  description: siteConfig.description,
-  jobTitle: "Full Stack Web Developer",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Indore",
-    addressRegion: "Madhya Pradesh",
-    addressCountry: "India",
-  },
-  email: siteConfig.author.email,
-  telephone: siteConfig.author.phone,
-  sameAs: [
-    siteConfig.author.linkedin,
-    siteConfig.author.github,
-    siteConfig.author.twitter,
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://snehasharma.me/#person",
+      name: "Sneha Sharma",
+      url: "https://snehasharma.me",
+      image: {
+        "@type": "ImageObject",
+        url: "/og-image.jpg",
+        width: 400,
+        height: 400,
+      },
+      description:
+        "Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL.",
+      jobTitle: "Full Stack Web Developer",
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelance",
+      },
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "Acropolis Institute of Technology and Research",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Indore",
+          addressRegion: "Madhya Pradesh",
+          addressCountry: "India",
+        },
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Indore",
+        addressRegion: "Madhya Pradesh",
+        addressCountry: "India",
+      },
+      email: "mailto:snehav2109@gmail.com",
+      sameAs: [
+        "https://github.com/SnehaSharma245",
+        "https://linkedin.com/in/ss0807",
+        "https://twitter.com/SnehaDevs",
+      ],
+      knowsAbout: [
+        "Web Development",
+        "Frontend Development",
+        "Backend Development",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "PostgreSQL",
+        "Express.js",
+        "GraphQL",
+        "RESTful APIs",
+        "MERN Stack",
+        "Chrome Extensions",
+        "AI Integration",
+      ],
+      gender: "Female",
+      nationality: "Indian",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://snehasharma.me/#website",
+      url: "https://snehasharma.me",
+      name: "Sneha Sharma - Full Stack Developer",
+      description:
+        "Portfolio website of Sneha Sharma, showcasing full-stack web development projects and skills",
+      publisher: {
+        "@id": "https://snehasharma.me/#person",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://snehasharma.me/?s={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://snehasharma.me/#profilepage",
+      url: "https://snehasharma.me",
+      name: "Sneha Sharma Portfolio",
+      isPartOf: {
+        "@id": "https://snehasharma.me/#website",
+      },
+      about: {
+        "@id": "https://snehasharma.me/#person",
+      },
+      description:
+        "Professional portfolio showcasing Sneha Sharma's expertise in full-stack web development, projects, and skills",
+    },
   ],
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Acropolis Institute of Technology and Research",
-  },
-  knowsAbout: [
-    "Web Development",
-    "Frontend Development",
-    "Backend Development",
-    "React",
-    "Next.js",
-    "JavaScript",
-    "TypeScript",
-    "Node.js",
-    "MongoDB",
-    "PostgreSQL",
-    "Express.js",
-    "GraphQL",
-    "RESTful APIs",
-    "MERN Stack",
-    "Chrome Extensions",
-    "AI Integration",
-  ],
-
-  gender: "Female",
-  nationality: "Indian",
 };
 
 export default function RootLayout({
@@ -179,17 +206,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="canonical" href="https://snehasharma.me" />
+        <meta name="geo.region" content="IN-MP" />
+        <meta name="geo.placename" content="Indore" />
+        <meta name="geo.position" content="22.7196;75.8577" />
+        <meta name="ICBM" content="22.7196, 75.8577" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         {children}
       </body>

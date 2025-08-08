@@ -1,8 +1,20 @@
 "use client";
-import React from "react";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowDown, Download, ExternalLink } from "lucide-react";
 
 const Hero = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
     if (element) {
@@ -10,119 +22,113 @@ const Hero = () => {
     }
   };
 
+  const skills = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "PostgreSQL",
+  ];
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
+
+      {/* Floating elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
+      <div
+        className="absolute bottom-32 right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-float"
+        style={{ animationDelay: "1s" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/15 rounded-full blur-lg animate-float"
+        style={{ animationDelay: "2s" }}
+      />
+
+      <div className="container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <div className="text-center lg:text-left">
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-4 mb-8">
-              <a
-                href="https://linkedin.com/in/sneha-sharma"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-              >
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com/sneha_sharma"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-              >
-                <svg
-                  className="w-6 h-6 text-blue-400"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-              </a>
-              <a
-                href="https://youtube.com/@sneha_sharma"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-              >
-                <svg
-                  className="w-6 h-6 text-red-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a>
-              <a
-                href="https://github.com/SnehaSharma245"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-              >
-                <svg
-                  className="w-6 h-6 text-gray-900"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
+          {/* Content */}
+          <div className="space-y-8 animate-fade-in-up">
+            <div className="space-y-4">
+              <Badge variant="secondary" className="text-sm">
+                👋 Available for new opportunities
+              </Badge>
+
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                Hi, I'm{" "}
+                <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                  Sneha
+                </span>
+              </h1>
+
+              <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground">
+                Full Stack Developer & MERN Stack Expert
+              </h2>
+
+              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+                I build exceptional digital experiences with modern
+                technologies. Specializing in scalable web applications using
+                Next.js, React, and Node.js.
+              </p>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              HEY, I&apos;M SNEHA SHARMA
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl leading-relaxed">
-              MERN & Next.js Developer | Building Scalable, High-Performance
-              Applications
-            </p>
-
-            <p className="text-lg text-gray-600 mb-6 max-w-2xl leading-relaxed">
-              Passionate about driving innovation, contributing to impactful
-              projects, and continuously enhancing my skills. Currently pursuing
-              B.Tech in CSE at Acropolis Institute, Indore.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-              <button
-                onClick={scrollToProjects}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                PROJECTS
-              </button>
+            {/* Skills */}
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill, index) => (
+                <Badge
+                  key={skill}
+                  variant="outline"
+                  className="text-sm animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
+                >
+                  {skill}
+                </Badge>
+              ))}
             </div>
 
-            <div className="text-gray-600 text-sm">
-              <p>📍 Indore, Madhya Pradesh</p>
-              <p>📞 +91 87705 79552</p>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="group" onClick={scrollToProjects}>
+                View My Work
+                <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+
+              <Button variant="outline" size="lg" className="group">
+                <Download className="mr-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                Download CV
+              </Button>
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="hidden lg:flex items-center space-x-2 text-muted-foreground">
+              <span className="text-sm">Scroll to explore</span>
+              <ArrowDown className="w-4 h-4 animate-bounce" />
             </div>
           </div>
 
-          {/* Right side - Profile image placeholder */}
-          <div className="flex justify-center">
+          {/* Profile Image */}
+          <div
+            className="relative flex justify-center lg:justify-end animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center">
-                <div className="w-72 h-72 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-6xl text-gray-400">👨‍💻</span>
-                </div>
-              </div>
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-xl">🚀</span>
+              {/* Background decoration */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-full blur-2xl" />
+
+              {/* Image container */}
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                <Image
+                  src="/profile-image.jpg"
+                  alt="Sneha Sharma - Full Stack Developer"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  priority
+                />
               </div>
             </div>
           </div>

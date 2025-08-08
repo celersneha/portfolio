@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -14,112 +24,130 @@ const Header = () => {
     }
   };
 
+  const navItems = [
+    { href: "home", label: "Home" },
+    { href: "about", label: "About" },
+    { href: "projects", label: "Projects" },
+    { href: "contact", label: "Contact" },
+  ];
+
+  const socialLinks = [
+    {
+      href: "https://github.com/SnehaSharma245",
+      icon: Github,
+      label: "GitHub",
+    },
+    {
+      href: "https://linkedin.com/in/ss0807",
+      icon: Linkedin,
+      label: "LinkedIn",
+    },
+    { href: "mailto:snehav2109@gmail.com", icon: Mail, label: "Email" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">S</span>
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-lg">
+                S
+              </span>
             </div>
-            <span className="font-bold text-xl text-gray-900">
-              SNEHA SHARMA
-            </span>
+            <span className="font-bold text-xl">Sneha</span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
-            >
-              HOME
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
-            >
-              ABOUT
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
-            >
-              PROJECTS
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
-            >
-              CONTACT
-            </button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-purple-600 transition-colors"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
               >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+                {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full" />
+              </button>
+            ))}
+          </nav>
+
+          {/* Social Links & Mobile Menu Button */}
+          <div className="flex items-center space-x-4">
+            {/* Social Links - Hidden on mobile */}
+            <div className="hidden md:flex items-center space-x-2">
+              {socialLinks.map((link) => (
+                <Button
+                  key={link.href}
+                  variant="ghost"
+                  size="sm"
+                  asChild
+                  className="w-9 h-9 p-0"
+                >
+                  <a href={link.href} aria-label={link.label}>
+                    <link.icon className="w-4 h-4" />
+                  </a>
+                </Button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden w-9 h-9 p-0"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium w-full text-left"
-              >
-                HOME
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium w-full text-left"
-              >
-                ABOUT
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium w-full text-left"
-              >
-                PROJECTS
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium w-full text-left"
-              >
-                CONTACT
-              </button>
-            </div>
+          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in-up">
+            <nav className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 text-left"
+                >
+                  {item.label}
+                </button>
+              ))}
+
+              {/* Mobile Social Links */}
+              <div className="flex items-center space-x-4 pt-4 border-t border-border">
+                {socialLinks.map((link) => (
+                  <Button
+                    key={link.href}
+                    variant="ghost"
+                    size="sm"
+                    asChild
+                    className="w-9 h-9 p-0"
+                  >
+                    <a href={link.href} aria-label={link.label}>
+                      <link.icon className="w-4 h-4" />
+                    </a>
+                  </Button>
+                ))}
+              </div>
+            </nav>
           </div>
         )}
-      </nav>
+      </div>
     </header>
   );
 };
