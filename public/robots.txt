@@ -1,42 +1,46 @@
-# Robots.txt for Sneha Sharma Portfolio
-# Allow all web crawlers to access all content
-
+# Allow all bots by default
 User-agent: *
 Allow: /
 Crawl-delay: 1
 
-# Specific instructions for major search engines
+# Googlebot specific rules
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
+# Bingbot specific rules
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 2
 
+# Yahoo Slurp
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
+# DuckDuckGo bot
 User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
+# Baidu
 User-agent: Baiduspider
 Allow: /
 Crawl-delay: 2
 
+# Yandex
 User-agent: YandexBot
 Allow: /
 Crawl-delay: 2
 
+# Social media bots
 User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot
 Allow: /
 
-# Block any unwanted bots
+# Block unwanted SEO scrapers
 User-agent: SemrushBot
 Disallow: /
 
@@ -46,12 +50,7 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-# Host
-Host: https://sneha-sharma-portfolio.vercel.app
-Host: https://snehasharma.me
-
-# Sitemaps
+# Sitemap
 Sitemap: https://snehasharma.me/sitemap.xml
 
-# Additional directives
-Cache-control: public, max-age=86400
+
