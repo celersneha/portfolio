@@ -21,27 +21,27 @@ const About = () => {
         "Next.js",
         "TypeScript",
         "Tailwind CSS",
-        "HTML5",
         "CSS3",
+        "Shadcn",
       ],
       color: "from-blue-500 to-purple-500",
     },
     {
       category: "Backend",
       icon: Server,
-      technologies: ["Node.js", "Express.js", "RESTful APIs", "GraphQL", "JWT"],
+      technologies: ["Node.js", "Express.js", "RESTful APIs", "GraphQL"],
       color: "from-green-500 to-teal-500",
     },
     {
       category: "Database",
       icon: Database,
-      technologies: ["MongoDB", "PostgreSQL", "Mongoose", "Prisma"],
+      technologies: ["MongoDB", "PostgreSQL", "Mongoose"],
       color: "from-orange-500 to-red-500",
     },
     {
       category: "Tools & Others",
       icon: Code,
-      technologies: ["Git", "Docker", "AWS", "Vercel", "Chrome Extensions"],
+      technologies: ["Git", "Docker", "Vercel", "Chrome Extensions"],
       color: "from-purple-500 to-pink-500",
     },
   ];
@@ -62,9 +62,9 @@ const About = () => {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I'm a Full Stack Developer with over 3 years of experience in
-              building modern web applications. Currently pursuing B.Tech in
-              Computer Science at Acropolis Institute, Indore.
+              I'm a Full Stack Developer with experience in building modern web
+              applications. Currently pursuing B.Tech in Computer Science at
+              Acropolis Institute, Indore.
             </p>
           </div>
 
@@ -149,7 +149,7 @@ const About = () => {
                     Acropolis Institute, Indore
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    2021 - 2025 (Expected)
+                    2022 - 2026 (Expected)
                   </div>
                 </div>
               </CardContent>
@@ -169,7 +169,7 @@ const About = () => {
                     📞 +91 87705 79552
                   </div>
                   <div className="text-muted-foreground">
-                    ✉️ snehasharma245cs@gmail.com
+                    ✉️ snehav2109@gmail.com
                   </div>
                 </div>
               </CardContent>

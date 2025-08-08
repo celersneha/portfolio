@@ -110,7 +110,7 @@ const Projects = () => {
                     }`}
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-lg m-4" />
-                    <div className="relative h-full bg-muted rounded-lg m-4 overflow-hidden">
+                    <div className="relative h-full bg-muted rounded-lg m-4 overflow-hidden flex items-center justify-center">
                       {/* Project image from public folder */}
                       <img
                         src={
@@ -123,7 +123,9 @@ const Projects = () => {
                             : ""
                         }
                         alt={project.title}
-                        className="object-fit w-full h-full opacity-90"
+                        className="object-contain w-full h-full rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 bg-muted p-4"
+                        loading="lazy"
+                        draggable={false}
                       />
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Download, ExternalLink } from "lucide-react";
@@ -51,7 +50,7 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex items-center justify-center">
           {/* Content */}
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
@@ -97,39 +96,12 @@ const Hero = () => {
                 View My Work
                 <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-
-              <Button variant="outline" size="lg" className="group">
-                <Download className="mr-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
-                Download CV
-              </Button>
             </div>
 
             {/* Scroll indicator */}
             <div className="hidden lg:flex items-center space-x-2 text-muted-foreground">
               <span className="text-sm">Scroll to explore</span>
               <ArrowDown className="w-4 h-4 animate-bounce" />
-            </div>
-          </div>
-
-          {/* Profile Image */}
-          <div
-            className="relative flex justify-center lg:justify-end animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <div className="relative">
-              {/* Background decoration */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-full blur-2xl" />
-
-              {/* Image container */}
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
-                <Image
-                  src="/profile-image.jpg"
-                  alt="Sneha Sharma - Full Stack Developer"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                  priority
-                />
-              </div>
             </div>
           </div>
         </div>
