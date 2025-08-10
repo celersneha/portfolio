@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://snehasharma.me"),
   title: {
-    default: "Sneha Sharma",
+    default: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     template: "%s | Sneha Sharma",
   },
   description:
@@ -73,9 +73,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://snehasharma.me",
-    siteName: "Sneha Sharma - Full Stack Developer",
-    title:
-      "Sneha Sharma - Full Stack Developer | Next.js Expert | Building Scalable Web Applications",
+    siteName: "Sneha Sharma - Full-Stack Web Developer",
+    title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
       "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
     images: [
@@ -91,8 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@SnehaDevs",
     creator: "@SnehaDevs",
-    title:
-      "Sneha Sharma - Full Stack Developer | Next.js Expert | Building Scalable Web Applications",
+    title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
       "Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public.",
     images: ["/og-image.png"],
@@ -182,6 +180,7 @@ const jsonLd = {
         target: "https://snehasharma.me/?s={search_term_string}",
         "query-input": "required name=search_term_string",
       },
+      logo: "https://snehasharma.me/favicon.ico",
     },
     {
       "@type": "ProfilePage",
@@ -208,11 +207,46 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-images/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-images/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon-images/android-chrome-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href="/favicon-images/android-chrome-512x512.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon-images/apple-touch-icon.png"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-images/favicon.ico"
+          type="image/x-icon"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="canonical" href="https://snehasharma.me" />
+
         <meta name="geo.region" content="IN-MP" />
         <meta name="geo.placename" content="Indore" />
         <meta name="geo.position" content="22.7196;75.8577" />
