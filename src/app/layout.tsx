@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://snehasharma.me"),
+  metadataBase: new URL("https://www.snehasharma.me"),
   title: {
     default: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     template: "%s | Sneha Sharma",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     "Scalable Applications",
     "High Performance Apps",
   ],
-  authors: [{ name: "Sneha Sharma", url: "https://snehasharma.me" }],
+  authors: [{ name: "Sneha Sharma", url: "https://www.snehasharma.me" }],
   creator: "Sneha Sharma",
   publisher: "Sneha Sharma",
   verification: {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://snehasharma.me",
+    url: "https://www.snehasharma.me",
     siteName: "Sneha Sharma - Full-Stack Web Developer",
     title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://snehasharma.me",
+    canonical: "https://www.snehasharma.me",
   },
   category: "technology",
 };
@@ -106,9 +106,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://snehasharma.me/#person",
+      "@id": "https://www.snehasharma.me/#person",
       name: "Sneha Sharma",
-      url: "https://snehasharma.me",
+      url: "https://www.snehasharma.me",
       image: {
         "@type": "ImageObject",
         url: "/og-image.jpg",
@@ -167,31 +167,31 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://snehasharma.me/#website",
-      url: "https://snehasharma.me",
+      "@id": "https://www.snehasharma.me/#website",
+      url: "https://www.snehasharma.me",
       name: "Sneha Sharma - Full Stack Developer",
       description:
         "Portfolio website of Sneha Sharma, showcasing full-stack web development projects and skills",
       publisher: {
-        "@id": "https://snehasharma.me/#person",
+        "@id": "https://www.snehasharma.me/#person",
       },
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://snehasharma.me/?s={search_term_string}",
+        target: "https://www.snehasharma.me/?s={search_term_string}",
         "query-input": "required name=search_term_string",
       },
-      logo: "https://snehasharma.me/favicon.ico",
+      logo: "https://www.snehasharma.me/favicon.ico",
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://snehasharma.me/#profilepage",
-      url: "https://snehasharma.me",
+      "@id": "https://www.snehasharma.me/#profilepage",
+      url: "https://www.snehasharma.me",
       name: "Sneha Sharma Portfolio",
       isPartOf: {
-        "@id": "https://snehasharma.me/#website",
+        "@id": "https://www.snehasharma.me/#website",
       },
       about: {
-        "@id": "https://snehasharma.me/#person",
+        "@id": "https://www.snehasharma.me/#person",
       },
       description:
         "Professional portfolio showcasing Sneha Sharma's expertise in full-stack web development, projects, and skills",
@@ -245,7 +245,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="canonical" href="https://snehasharma.me" />
+        <link rel="canonical" href="https://www.snehasharma.me" />
 
         <meta name="geo.region" content="IN-MP" />
         <meta name="geo.placename" content="Indore" />

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://snehasharma.me/sitemap.xml
+Sitemap: https://www.snehasharma.me/sitemap.xml
 
 # Allow all major search engines
 User-agent: Googlebot
