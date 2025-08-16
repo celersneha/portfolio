@@ -25,25 +25,25 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/ss0807",
+      href: "https://linkedin.com/in/celersneha",
       icon: Linkedin,
       color: "hover:text-blue-400",
     },
     {
       name: "GitHub",
-      href: "https://github.com/SnehaSharma245",
+      href: "https://github.com/celersneha",
       icon: Github,
       color: "hover:text-gray-300",
     },
     {
       name: "Twitter",
-      href: "https://twitter.com/SnehaDevs",
+      href: "https://twitter.com/celersneha",
       icon: Twitter,
       color: "hover:text-blue-400",
     },
     {
       name: "Email",
-      href: "mailto:snehav2109@gmail.com",
+      href: "mailto:celersneha@gmail.com",
       icon: Mail,
       color: "hover:text-green-400",
     },
