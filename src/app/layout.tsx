@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   description:
     "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
   keywords: [
+    "celersneha",
+    "Sneha Sharma",
+    "Sneha Sharma Portfolio",
+    "Sneha Sharma Indore",
     "Sneha Sharma Web Developer",
     "Web Developer Indore",
     "MERN Stack Developer",
@@ -40,6 +44,7 @@ export const metadata: Metadata = {
     "Acropolis Institute",
     "Chrome Extension Developer",
     "AI Integration Developer",
+    "DevZoku",
     "Payment Gateway Integration",
     "InvisiFeed",
     "InactiTab",
@@ -148,6 +153,7 @@ const jsonLd = {
         "Web Development",
         "Frontend Development",
         "Backend Development",
+        "Langchain.js",
         "React",
         "Next.js",
         "JavaScript",
