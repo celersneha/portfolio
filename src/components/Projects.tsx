@@ -1,12 +1,65 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Calendar, Users } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Calendar,
+  Users,
+  BookOpenText,
+} from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import ProjectDetail from "@/components/popup/ProjectDetail";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "DevZoku",
+      description:
+        "Empowering Collaboration in the World of Hackathons. A modern hackathon management platform for developers, organizers, and the wider hackathon community.",
+      longDescription:
+        "DevZoku is a modern hackathon management platform built for developers, organizers, and the wider hackathon community. Discover and join hackathons, form teams, manage events, and receive intelligent recommendations. Features include profile management, team collaboration, project management, hackathon discovery, notifications, organizer tools and AI-driven matching. Built with Next.js, Express, PostgreSQL, Qdrant, and more.",
+      technologies: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Radix UI",
+        "React Hook Form",
+        "Framer Motion",
+        "Lucide React",
+        "Express.js",
+        "PostgreSQL 17",
+        "Drizzle ORM",
+        "Qdrant",
+        "Bun",
+        "Valkey",
+        "Cloudinary",
+        "MistralAI",
+        "Google Gemini",
+        "Socket.io",
+        "BullMQ",
+        "Docker",
+        "GitHub Actions",
+      ],
+      features: [
+        "Developer & Organizer profile management",
+        "Team creation and collaboration tools",
+        "Project portfolio and management",
+        "Hackathon discovery and recommendations",
+        "Real-time notifications",
+        "AI-powered event and team matching",
+        "Hackathon creation and management for organizers",
+        "Automated email notifications",
+        "Secure authentication and file storage",
+        "Responsive, accessible UI",
+      ],
+      liveUrl: "https://devzoku.app",
+      githubUrl: "https://github.com/celersneha/devzoku",
+      category: "Web Application",
+    },
     {
       title: "InvisiFeed",
       description:
@@ -21,7 +74,7 @@ const Projects = () => {
         "Admin dashboard",
       ],
       liveUrl: "https://invisifeed.vercel.app",
-      githubUrl: "https://github.com/SnehaSharma245/invisifeed",
+      githubUrl: "https://github.com/celersneha/invisifeed",
       category: "Web Application",
     },
     {
@@ -38,36 +91,12 @@ const Projects = () => {
         "Memory usage tracking",
       ],
       liveUrl: "https://inactitab.vercel.app",
-      githubUrl: "https://github.com/SnehaSharma245/inactitab",
+      githubUrl: "https://github.com/celersneha/inactitab",
       category: "Browser Extension",
     },
-    {
-      title: "CineHue",
-      description:
-        "A modern, responsive movie discovery application with real-time search suggestions and detailed movie information powered by the OMDB API.",
-      longDescription:
-        "CineHue is a feature-rich movie discovery platform built with React and React Router. It offers real-time search suggestions, keyboard navigation, and detailed movie pages with information from the OMDB API. The app features a dark theme, smooth animations, responsive design, and custom loading screens for a seamless user experience.",
-      technologies: [
-        "React",
-        "React Router v7",
-        "Tailwind CSS",
-        "Axios",
-        "Vite",
-        "OMDB API",
-      ],
-      features: [
-        "Real-time movie search with live suggestions",
-        "Keyboard navigation for search dropdown",
-        "Responsive movie grid and detailed pages",
-        "Star rating system based on IMDB scores",
-        "Dark theme and smooth UI animations",
-        "Custom loading screens",
-      ],
-      liveUrl: "https://cinehue.vercel.app",
-      githubUrl: "https://github.com/SnehaSharma245/cinehue",
-      category: "Web Application",
-    },
   ];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -116,8 +145,8 @@ const Projects = () => {
                         src={
                           project.title === "InvisiFeed"
                             ? "/projects/Invisifeed.png"
-                            : project.title === "CineHue"
-                            ? "/projects/Cinehue.png"
+                            : project.title === "DevZoku"
+                            ? "/projects/Devzoku.png"
                             : project.title === "InactiTab"
                             ? "/projects/Inactitab.png"
                             : ""
@@ -133,9 +162,11 @@ const Projects = () => {
 
                   {/* Project Content */}
                   <div
-                    className={`p-8 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
+                    className={`p-8 flex flex-col justify-between ${
+                      index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
                   >
-                    <CardHeader className="p-0 mb-6">
+                    <CardHeader className="p-0 mb-4">
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="secondary" className="text-xs">
                           {project.category}
@@ -145,53 +176,48 @@ const Projects = () => {
                           <span>2024</span>
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-3">
+                      <h3 className="text-2xl font-bold mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.longDescription}
+                      <p className="text-muted-foreground leading-relaxed line-clamp-3">
+                        {project.description}
                       </p>
                     </CardHeader>
 
-                    <CardContent className="p-0 space-y-6">
+                    <CardContent className="p-0 space-y-4">
                       {/* Technologies */}
                       <div>
-                        <h4 className="font-semibold mb-3">
-                          Technologies Used
+                        <h4 className="font-semibold mb-2 text-sm">
+                          Tech Stack
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="outline"
-                              className="text-xs"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
+                          {project.technologies
+                            .slice(0, 5)
+                            .map((tech, techIndex) => (
+                              <Badge
+                                key={techIndex}
+                                variant="outline"
+                                className="text-xs"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          {project.technologies.length > 5 && (
+                            <span className="text-xs text-muted-foreground">
+                              +{project.technologies.length - 5} more
+                            </span>
+                          )}
                         </div>
                       </div>
 
-                      {/* Key Features */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Key Features</h4>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {project.features.map((feature, featureIndex) => (
-                            <li
-                              key={featureIndex}
-                              className="flex items-center space-x-2"
-                            >
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
                       {/* Action Buttons */}
-                      <div className="flex space-x-4 pt-4">
-                        <Button asChild className="flex-1 group">
-                          <a href={project.liveUrl}>
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        <Button asChild size="sm" className="flex-1 group">
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <ExternalLink className="mr-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             Live Demo
                           </a>
@@ -199,12 +225,26 @@ const Projects = () => {
                         <Button
                           variant="outline"
                           asChild
+                          size="sm"
                           className="flex-1 group"
                         >
-                          <a href={project.githubUrl}>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             <Github className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
                             View Code
                           </a>
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          className="flex-1 cursor-pointer"
+                          onClick={() => setOpenIndex(index)}
+                        >
+                          <BookOpenText className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                          View In Detail
                         </Button>
                       </div>
                     </CardContent>
@@ -214,13 +254,36 @@ const Projects = () => {
             ))}
           </div>
 
+          {/* Project Detail Dialog */}
+          <Dialog
+            open={openIndex !== null}
+            onOpenChange={(open) => !open && setOpenIndex(null)}
+          >
+            <DialogContent className="max-w-lg w-full sm:max-w-xl md:max-w-2xl p-0">
+              {openIndex !== null && (
+                <ProjectDetail
+                  project={projects[openIndex]}
+                  open={openIndex !== null}
+                  onClose={() => setOpenIndex(null)}
+                  onOpen={() => {}}
+                />
+              )}
+            </DialogContent>
+          </Dialog>
+
           {/* Call to Action */}
           <div className="text-center mt-16">
-            <div className="inline-flex items-center space-x-2 text-muted-foreground mb-4">
+            <div className="flex flex-col items-center space-x-2 text-muted-foreground mb-4">
               <Users className="w-5 h-5" />
               <span>Interested in collaboration?</span>
             </div>
-            <Button size="lg" className="group">
+            <Button
+              size="lg"
+              className="group"
+              onClick={() =>
+                (window.location.href = "mailto:celersneha@gmail.com")
+              }
+            >
               Let's Work Together
               <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
