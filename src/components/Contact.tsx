@@ -49,8 +49,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "snehav2109@gmail.com",
-      href: "mailto:snehav2109@gmail.com",
+      value: "celersneha@gmail.com",
+      href: "mailto:celersneha@gmail.com",
       description: "Send me an email",
     },
     {
@@ -144,73 +144,6 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Social Links */}
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Follow Me</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {socialLinks.map((social, index) => (
-                    <Card
-                      key={index}
-                      className="border-border/50 hover:border-primary/50 transition-colors group"
-                    >
-                      <CardContent className="p-6 text-center">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
-                          <social.icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="font-semibold mb-1">{social.label}</div>
-                        <div className="text-muted-foreground text-sm mb-3">
-                          {social.description}
-                        </div>
-                        <Button
-                          asChild
-                          variant="outline"
-                          size="sm"
-                          className="w-full"
-                        >
-                          <a href={social.href}>Visit Profile</a>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Actions */}
-              <Card className="border-border/50">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Coffee className="w-5 h-5 text-primary" />
-                    <span>Quick Actions</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full justify-start"
-                  >
-                    <a href="/email">
-                      <MessageSquare className="mr-2 w-4 h-4" />
-                      Send Quick Message
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full justify-start"
-                  >
-                    <a
-                      href="https://calendly.com/snehasharma"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Calendar className="mr-2 w-4 h-4" />
-                      Schedule a Call
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
             </div>
 
             {/* Contact Form */}
@@ -323,12 +256,14 @@ const Contact = () => {
               Let's discuss how we can bring your ideas to life with modern
               technologies and user-centered design.
             </p>
-            <Button size="lg" className="group">
-              <Coffee className="mr-2 w-4 h-4" />
-              Let's grab a coffee
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                ☕
-              </span>
+            <Button size="lg" asChild className="group">
+              <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
+                <Coffee className="mr-2 w-4 h-4" />
+                Let's grab a coffee
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                  ☕
+                </span>
+              </a>
             </Button>
           </div>
         </div>
