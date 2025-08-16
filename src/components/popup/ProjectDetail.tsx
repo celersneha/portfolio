@@ -41,7 +41,7 @@ const ProjectDetail = ({
   }, [open, onOpen]);
 
   return (
-    <div className="max-h-[80vh] overflow-y-auto border-blue-300 border rounded-2xl">
+    <div className="max-h-[80vh] overflow-y-auto border-blue-300 border rounded-2xl mx-3 backdrop-blur-2xl">
       <div className="p-4">
         <DialogHeader>
           <div className="flex items-start justify-between mt-5">
@@ -49,7 +49,7 @@ const ProjectDetail = ({
             <Badge
               variant="secondary"
               className="relative overflow-hidden text-xs mt-1 ml-4
-               bg-[#000103]/40 backdrop-blur-md
+               bg-[#000103]/40 backdrop-blur-2xl
                border border-gray-400/40 text-white
                shadow-sm rounded-md"
             >

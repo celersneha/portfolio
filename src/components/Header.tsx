@@ -6,6 +6,8 @@ import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,6 +23,26 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
+    }
+  };
+
+  const closeMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsClosing(false);
+    }, 300);
+  };
+
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      closeMenu();
+    } else {
+      setIsOpening(true);
+      setIsMenuOpen(true);
+      setTimeout(() => {
+        setIsOpening(false);
+      }, 50);
     }
   };
 
@@ -103,7 +125,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               className="md:hidden w-9 h-9 p-0"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5" />
@@ -116,36 +138,69 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border animate-fade-in-up">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 text-left"
-                >
-                  {item.label}
-                </button>
-              ))}
+          <>
+            {/* Backdrop */}
+            <div
+              className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${
+                isClosing || isOpening ? "opacity-0" : "opacity-100"
+              }`}
+              onClick={closeMenu}
+            />
 
-              {/* Mobile Social Links */}
-              <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                {socialLinks.map((link) => (
+            {/* Mobile Menu */}
+            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 md:hidden">
+              <div
+                className={`bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl p-6 min-w-[280px] transition-all duration-300 ease-in-out ${
+                  isClosing
+                    ? "opacity-0 scale-95 translate-y-2"
+                    : isOpening
+                    ? "opacity-0 scale-95 translate-y-2"
+                    : "opacity-100 scale-100 translate-y-0"
+                }`}
+              >
+                {/* Close Button */}
+                <div className="flex justify-end mb-4">
                   <Button
-                    key={link.href}
                     variant="ghost"
                     size="sm"
-                    asChild
-                    className="w-9 h-9 p-0"
+                    className="w-8 h-8 p-0 rounded-full"
+                    onClick={closeMenu}
                   >
-                    <a href={link.href} aria-label={link.label}>
-                      <link.icon className="w-4 h-4" />
-                    </a>
+                    <X className="w-4 h-4" />
                   </Button>
-                ))}
+                </div>
+
+                <nav className="flex flex-col space-y-4">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.href}
+                      onClick={() => scrollToSection(item.href)}
+                      className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-3 px-4 text-left rounded-lg hover:bg-muted/50 font-medium"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+
+                  {/* Mobile Social Links */}
+                  <div className="flex items-center justify-center space-x-4 pt-6 border-t border-border">
+                    {socialLinks.map((link) => (
+                      <Button
+                        key={link.href}
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
+                      >
+                        <a href={link.href} aria-label={link.label}>
+                          <link.icon className="w-5 h-5" />
+                        </a>
+                      </Button>
+                    ))}
+                  </div>
+                </nav>
               </div>
-            </nav>
-          </div>
+            </div>
+          </>
         )}
       </div>
     </header>

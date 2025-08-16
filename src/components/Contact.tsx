@@ -99,20 +99,12 @@ const Contact = () => {
                 amazing together
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I'm always interested in new opportunities, collaborations, and
-              interesting projects. Whether you have a question or just want to
-              say hello, feel free to reach out!
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold mb-6">
-                  Contact Information
-                </h3>
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
                     <Card

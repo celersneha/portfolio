@@ -23,11 +23,12 @@ const Hero = () => {
 
   const skills = [
     "Next.js",
-    "React",
+    "React.js",
     "TypeScript",
     "Node.js",
     "Express.js",
     "MongoDB",
+    "PostgreSQL",
     "Docker",
     "LangChain.js",
     "RAG",
@@ -37,7 +38,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
@@ -53,60 +54,61 @@ const Hero = () => {
         style={{ animationDelay: "2s" }}
       />
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="flex items-center justify-center">
-          {/* Content */}
-          <div className="space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <Badge variant="secondary" className="text-sm">
-                👋 Available for new opportunities
+      <div className="w-full h-full flex items-center justify-center px-4 py-4">
+        {/* Content */}
+        <div className="space-y-10 sm:space-y-2 md:space-y-2 animate-fade-in-up text-center md:text-left max-w-4xl">
+          <div className="space-y-6 sm:space-y-8 md:space-y-4">
+            <Badge variant="secondary" className="text-sm">
+              👋 Available for new opportunities
+            </Badge>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                Sneha
+              </span>
+            </h1>
+
+            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl text-muted-foreground">
+              Full Stack Developer
+            </h2>
+
+            <p className="text-lg sm:text-xl md:text-lg text-muted-foreground max-w-lg md:max-w-lg mx-auto md:mx-0 leading-relaxed">
+              I build exceptional digital experiences with modern technologies.
+              Specializing in building scalable web applications.
+            </p>
+          </div>
+
+          {/* Skills */}
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-2 justify-center md:justify-start">
+            {skills.map((skill, index) => (
+              <Badge
+                key={skill}
+                variant="outline"
+                className="text-sm animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
+              >
+                {skill}
               </Badge>
+            ))}
+          </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                  Sneha
-                </span>
-              </h1>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 sm:pt-6 md:pt-0">
+            <Button
+              size="lg"
+              className="group w-full sm:w-auto text-base"
+              onClick={scrollToProjects}
+            >
+              View My Work
+              <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
 
-              <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground">
-                Full Stack Developer & MERN Stack Expert
-              </h2>
-
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-                I build exceptional digital experiences with modern
-                technologies. Specializing in scalable web applications using
-                Next.js, React, and Node.js.
-              </p>
-            </div>
-
-            {/* Skills */}
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="outline"
-                  className="text-sm animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="group" onClick={scrollToProjects}>
-                View My Work
-                <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
-
-            {/* Scroll indicator */}
-            <div className="hidden lg:flex items-center space-x-2 text-muted-foreground">
-              <span className="text-sm">Scroll to explore</span>
-              <ArrowDown className="w-4 h-4 animate-bounce" />
-            </div>
+          {/* Scroll indicator */}
+          <div className="hidden lg:flex items-center space-x-2 text-muted-foreground">
+            <span className="text-sm">Scroll to explore</span>
+            <ArrowDown className="w-4 h-4 animate-bounce" />
           </div>
         </div>
       </div>

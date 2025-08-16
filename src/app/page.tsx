@@ -5,14 +5,15 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <About />
       <Projects />
+      <TechStack />
       <Contact />
       <Footer />
     </main>

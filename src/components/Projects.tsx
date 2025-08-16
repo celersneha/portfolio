@@ -110,7 +110,7 @@ const Projects = () => {
         "InactiTab is a smart browser extension that monitors tab activity and automatically suspends inactive tabs, resulting in 30% better browser performance and reduced memory consumption.",
       technologies: [
         "JavaScript",
-        "Chrome APIs",
+        "Browser APIs",
         "Manifest V3",
         "Vite",
         "TailwindCSS",
@@ -130,7 +130,7 @@ const Projects = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-10 relative">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -144,15 +144,10 @@ const Projects = () => {
                 an impact
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover my latest projects showcasing full-stack development,
-              innovative solutions, and modern technologies that solve
-              real-world problems.
-            </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {projects.map((project, index) => (
               <Card
                 key={index}
@@ -169,8 +164,8 @@ const Projects = () => {
                       index % 2 === 1 ? "lg:col-start-2" : ""
                     }`}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-lg m-4" />
-                    <div className="relative h-full bg-muted rounded-lg m-4 overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-lg" />
+                    <div className="relative h-full bg-muted rounded-lg overflow-hidden flex items-center justify-center m-0">
                       {/* Project image from public folder */}
                       <img
                         src={
@@ -183,7 +178,7 @@ const Projects = () => {
                             : ""
                         }
                         alt={project.title}
-                        className="object-contain w-full h-full rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 bg-muted p-4"
+                        className="object-contain w-full h-full rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 bg-muted p-2"
                         loading="lazy"
                         draggable={false}
                       />
@@ -303,20 +298,32 @@ const Projects = () => {
           </Dialog>
 
           {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="flex flex-col items-center space-x-2 text-muted-foreground mb-4">
-              <Users className="w-5 h-5" />
-              <span>Interested in collaboration?</span>
-            </div>
+          <div className="text-center mt-16 ">
             <Button
               size="lg"
-              className="group"
+              className="group mr-2"
               onClick={() =>
                 (window.location.href = "mailto:celersneha@gmail.com")
               }
             >
               Let's Work Together
               <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            {/* Explore More Projects Button */}
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="mt-8 text-primary hover:bg-primary/10 transition-colors font-semibold  "
+            >
+              <a
+                href="https://github.com/celersneha?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore More Projects
+                <Github className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
         </div>
