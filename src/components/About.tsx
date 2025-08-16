@@ -14,35 +14,57 @@ import {
 const About = () => {
   const skills = [
     {
-      category: "Frontend",
+      category: "Frontend Development",
       icon: Palette,
       technologies: [
-        "React",
         "Next.js",
+        "React.js",
         "TypeScript",
+        "JavaScript",
         "Tailwind CSS",
+        "HTML5",
         "CSS3",
-        "Shadcn",
+        "Component Libraries",
       ],
       color: "from-blue-500 to-purple-500",
     },
     {
-      category: "Backend",
+      category: "Backend Development",
       icon: Server,
-      technologies: ["Node.js", "Express.js", "RESTful APIs", "GraphQL"],
+      technologies: [
+        "Node.js",
+        "Express.js",
+        "API Integration",
+        "Webhooks",
+        "WebSocket",
+        "JWT",
+      ],
       color: "from-green-500 to-teal-500",
     },
     {
-      category: "Database",
+      category: "Databases",
       icon: Database,
-      technologies: ["MongoDB", "PostgreSQL", "Mongoose"],
+      technologies: ["MongoDB", "PostgreSQL", "Redis"],
       color: "from-orange-500 to-red-500",
     },
     {
-      category: "Tools & Others",
+      category: "GenAI",
       icon: Code,
-      technologies: ["Git", "Docker", "Vercel", "Chrome Extensions"],
+      technologies: ["LangChain.js", "Vector Databases", "RAG Pipelines"],
       color: "from-purple-500 to-pink-500",
+    },
+    {
+      category: "Tools & Services",
+      icon: Globe,
+      technologies: [
+        "Git",
+        "Postman",
+        "Docker",
+        "GitHub",
+        "GitHub Actions",
+        "Browser APIs",
+      ],
+      color: "from-indigo-500 to-blue-500",
     },
   ];
 
@@ -99,9 +121,9 @@ const About = () => {
           {/* Skills Section */}
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-8 text-center">
-              Technical Skills
+              🛠️ Crafting with These
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <Card
                   key={index}
