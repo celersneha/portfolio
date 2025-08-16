@@ -28,7 +28,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    const mailtoLink = `mailto:snehasharma245cs@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:celersneha@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -73,13 +73,13 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/SnehaSharma245",
+      href: "https://github.com/celersneha",
       description: "Check out my code",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/ss0807",
+      href: "https://linkedin.com/in/celersneha",
       description: "Let's connect professionally",
     },
   ];

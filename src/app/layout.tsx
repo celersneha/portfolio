@@ -143,11 +143,11 @@ const jsonLd = {
         addressRegion: "Madhya Pradesh",
         addressCountry: "India",
       },
-      email: "mailto:snehav2109@gmail.com",
+      email: "mailto:celersneha@gmail.com",
       sameAs: [
-        "https://github.com/SnehaSharma245",
-        "https://linkedin.com/in/ss0807",
-        "https://twitter.com/SnehaDevs",
+        "https://github.com/celersneha",
+        "https://linkedin.com/in/celersneha",
+        "https://twitter.com/celersneha",
       ],
       knowsAbout: [
         "Web Development",

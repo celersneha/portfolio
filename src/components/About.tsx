@@ -191,7 +191,7 @@ const About = () => {
                     📞 +91 87705 79552
                   </div>
                   <div className="text-muted-foreground">
-                    ✉️ snehav2109@gmail.com
+                    ✉️ celersneha@gmail.com
                   </div>
                 </div>
               </CardContent>

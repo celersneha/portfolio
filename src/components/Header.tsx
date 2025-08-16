@@ -33,16 +33,16 @@ const Header = () => {
 
   const socialLinks = [
     {
-      href: "https://github.com/SnehaSharma245",
+      href: "https://github.com/celersneha",
       icon: Github,
       label: "GitHub",
     },
     {
-      href: "https://linkedin.com/in/ss0807",
+      href: "https://linkedin.com/in/celersneha",
       icon: Linkedin,
       label: "LinkedIn",
     },
-    { href: "mailto:snehav2109@gmail.com", icon: Mail, label: "Email" },
+    { href: "mailto:celersneha@gmail.com", icon: Mail, label: "Email" },
   ];
 
   return (

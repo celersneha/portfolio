@@ -6,10 +6,10 @@ const routes = {
   "/invisifeed": "https://invisifeed.vercel.app",
   "/inactitab": "https://inactitab.vercel.app",
   "/cinehue": "https://cinehue.vercel.app",
-  "/linkedin": "https://www.linkedin.com/in/ss0807",
-  "/github": "https://github.com/SnehaSharma245",
-  "/twitter": "https://twitter.com/SnehaDevs",
-  "/email": "mailto:snehav2109@gmail.com",
+  "/linkedin": "https://www.linkedin.com/in/celersneha",
+  "/github": "https://github.com/celersneha",
+  "/twitter": "https://twitter.com/celersneha",
+  "/email": "mailto:celersneha@gmail.com",
 };
 
 export function middleware(request: NextRequest) {
