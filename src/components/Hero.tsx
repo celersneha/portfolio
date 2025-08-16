@@ -26,8 +26,12 @@ const Hero = () => {
     "React",
     "TypeScript",
     "Node.js",
+    "Express.js",
     "MongoDB",
-    "PostgreSQL",
+    "Docker",
+    "LangChain.js",
+    "RAG",
+    "Vector Databases",
   ];
 
   return (
