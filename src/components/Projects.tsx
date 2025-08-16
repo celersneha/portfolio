@@ -66,7 +66,32 @@ const Projects = () => {
         "A revolutionary anonymous feedback platform that enables honest communication in educational and professional environments.",
       longDescription:
         "InvisiFeed transforms feedback culture by providing a secure, anonymous platform for students and employees to share honest opinions. Built with Next.js and features AI-powered sentiment analysis.",
-      technologies: ["Next.js", "React", "Node.js", "MongoDB", "AI/ML"],
+      technologies: [
+        "Next.js",
+        "JavaScript",
+        "TailwindCSS",
+        "Shadcn UI",
+        "Radix UI",
+        "Framer Motion",
+        "Recharts",
+        "React-Hook-Form",
+
+        "NextAuth",
+        "Cloudinary",
+        "pdf-lib",
+        "Zod",
+        "JWT",
+        "Bcrypt",
+        "Nodemailer",
+        "Mongoose",
+        "Gemini 2.0 Flash API",
+        "Razorpay",
+        "ClearTax GSTIN API",
+        "CRON Jobs",
+
+        // Database
+        "MongoDB Atlas",
+      ],
       features: [
         "Anonymous feedback system",
         "AI sentiment analysis",
@@ -83,12 +108,18 @@ const Projects = () => {
         "Chrome extension that automatically detects and manages inactive browser tabs to improve performance and reduce memory usage.",
       longDescription:
         "InactiTab is a smart browser extension that monitors tab activity and automatically suspends inactive tabs, resulting in 30% better browser performance and reduced memory consumption.",
-      technologies: ["JavaScript", "Chrome APIs", "HTML", "CSS"],
+      technologies: [
+        "JavaScript",
+        "Chrome APIs",
+        "Manifest V3",
+        "Vite",
+        "TailwindCSS",
+      ],
       features: [
         "Automatic tab suspension",
-        "Performance monitoring",
         "Customizable settings",
         "Memory usage tracking",
+        "Media tab detection",
       ],
       liveUrl: "https://inactitab.vercel.app",
       githubUrl: "https://github.com/celersneha/inactitab",
