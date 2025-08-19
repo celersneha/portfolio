@@ -8,7 +8,7 @@ const routes = {
   "/cinehue": "https://cinehue.vercel.app",
   "/linkedin": "https://www.linkedin.com/in/celersneha",
   "/github": "https://github.com/celersneha",
-  "/twitter": "https://twitter.com/celersneha",
+  "/twitter": "https://x.com/celersneha",
   "/email": "mailto:celersneha@gmail.com",
 };
 

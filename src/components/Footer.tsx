@@ -1,6 +1,7 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
-import { Github, Linkedin, Twitter, Mail, MapPin, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Code2 } from "lucide-react";
+import { BsTwitterX } from "react-icons/bs";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,8 +21,8 @@ const Footer = () => {
     },
     {
       name: "Twitter",
-      href: "https://twitter.com/celersneha",
-      icon: Twitter,
+      href: "https://x.com/celersneha",
+      icon: BsTwitterX,
       color: "hover:text-blue-400",
     },
     {
