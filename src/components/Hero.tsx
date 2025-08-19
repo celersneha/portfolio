@@ -1,19 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Download, ExternalLink } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 
 const Hero = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   const scrollToProjects = () => {
     const element = document.getElementById("projects");
     if (element) {
