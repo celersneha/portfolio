@@ -93,8 +93,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@SnehaDevs",
-    creator: "@SnehaDevs",
+    site: "@celersneha",
+    creator: "@celersneha",
     title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
       "Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public.",
@@ -147,7 +147,7 @@ const jsonLd = {
       sameAs: [
         "https://github.com/celersneha",
         "https://linkedin.com/in/celersneha",
-        "https://twitter.com/celersneha",
+        "https://x.com/celersneha",
       ],
       knowsAbout: [
         "Web Development",
