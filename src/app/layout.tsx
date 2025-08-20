@@ -252,7 +252,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="canonical" href="https://www.snehasharma.me" />
-
+        <link rel="me" href="https://github.com/celersneha" />
+        <link rel="me" href="https://linkedin.com/in/celersneha" />
         <meta name="geo.region" content="IN-MP" />
         <meta name="geo.placename" content="Indore" />
         <meta name="geo.position" content="22.7196;75.8577" />
