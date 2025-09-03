@@ -26,7 +26,7 @@ export default function ProjectDetailPage() {
     >
       <div className="container mx-auto max-w-3xl px-4">
         {/* Project Image */}
-        <div className="mb-8 rounded-lg overflow-hidden shadow-lg bg-muted flex items-center justify-center h-64">
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg  flex items-center justify-center h-64">
           {project.img ? (
             <img
               src={project.img}
