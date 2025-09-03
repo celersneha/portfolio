@@ -8,122 +8,8 @@ type Project = {
   githubUrl: string;
   category: string;
   img?: string;
+  year: number;
 };
-
-export const topProjects = [
-  {
-    title: "DevZoku",
-    description:
-      "Empowering Collaboration in the World of Hackathons. A modern hackathon management platform for developers, organizers, and the wider hackathon community.",
-    longDescription:
-      "DevZoku is a modern hackathon management platform built for developers, organizers, and the wider hackathon community. Discover and join hackathons, form teams, manage events, and receive intelligent recommendations. Features include profile management, team collaboration, project management, hackathon discovery, notifications, organizer tools and AI-driven matching. Built with Next.js, Express, PostgreSQL, Qdrant, and more.",
-    technologies: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind CSS",
-      "Radix UI",
-      "React Hook Form",
-      "Framer Motion",
-      "Lucide React",
-      "Express.js",
-      "PostgreSQL 17",
-      "Drizzle ORM",
-      "Qdrant",
-      "Bun",
-      "Valkey",
-      "Cloudinary",
-      "MistralAI",
-      "Google Gemini",
-      "Socket.io",
-      "BullMQ",
-      "Docker",
-      "GitHub Actions",
-    ],
-    features: [
-      "Developer & Organizer profile management",
-      "Team creation and collaboration tools",
-      "Project portfolio and management",
-      "Hackathon discovery and recommendations",
-      "Real-time notifications",
-      "AI-powered event and team matching",
-      "Hackathon creation and management for organizers",
-      "Automated email notifications",
-      "Secure authentication and file storage",
-      "Responsive, accessible UI",
-    ],
-    liveUrl: "https://devzoku.app",
-    githubUrl: "https://github.com/celersneha/devzoku",
-    category: "Web Application",
-    img: "/projects/Devzoku.png",
-  },
-  {
-    title: "InvisiFeed",
-    description:
-      "A revolutionary anonymous feedback platform that enables honest communication in educational and professional environments.",
-    longDescription:
-      "InvisiFeed transforms feedback culture by providing a secure, anonymous platform for students and employees to share honest opinions. Built with Next.js and features AI-powered sentiment analysis.",
-    technologies: [
-      "Next.js",
-      "JavaScript",
-      "TailwindCSS",
-      "Shadcn UI",
-      "Radix UI",
-      "Framer Motion",
-      "Recharts",
-      "React-Hook-Form",
-
-      "NextAuth",
-      "Cloudinary",
-      "pdf-lib",
-      "Zod",
-      "JWT",
-      "Bcrypt",
-      "Nodemailer",
-      "Mongoose",
-      "Gemini 2.0 Flash API",
-      "Razorpay",
-      "ClearTax GSTIN API",
-      "CRON Jobs",
-
-      // Database
-      "MongoDB Atlas",
-    ],
-    features: [
-      "Anonymous feedback system",
-      "AI sentiment analysis",
-      "Real-time notifications",
-      "Admin dashboard",
-    ],
-    liveUrl: "https://invisifeed.vercel.app",
-    githubUrl: "https://github.com/celersneha/invisifeed",
-    category: "Web Application",
-    img: "/projects/Invisifeed.png",
-  },
-  {
-    title: "InactiTab",
-    description:
-      "Chrome extension that automatically detects and manages inactive browser tabs to improve performance and reduce memory usage.",
-    longDescription:
-      "InactiTab is a smart browser extension that monitors tab activity and automatically suspends inactive tabs, resulting in 30% better browser performance and reduced memory consumption.",
-    technologies: [
-      "JavaScript",
-      "Browser APIs",
-      "Manifest V3",
-      "Vite",
-      "TailwindCSS",
-    ],
-    features: [
-      "Automatic tab suspension",
-      "Customizable settings",
-      "Memory usage tracking",
-      "Media tab detection",
-    ],
-    liveUrl: "https://inactitab.vercel.app",
-    githubUrl: "https://github.com/celersneha/inactitab",
-    category: "Browser Extension",
-    img: "/projects/Inactitab.png",
-  },
-];
 
 const projects = [
   {
@@ -170,6 +56,7 @@ const projects = [
     githubUrl: "https://github.com/celersneha/devzoku",
     category: "Web Application",
     img: "/projects/Devzoku.png",
+    year: 2025,
   },
   {
     title: "InvisiFeed",
@@ -213,6 +100,7 @@ const projects = [
     githubUrl: "https://github.com/celersneha/invisifeed",
     category: "Web Application",
     img: "/projects/Invisifeed.png",
+    year: 2025,
   },
   {
     title: "InactiTab",
@@ -237,6 +125,7 @@ const projects = [
     githubUrl: "https://github.com/celersneha/inactitab",
     category: "Browser Extension",
     img: "/projects/Inactitab.png",
+    year: 2025,
   },
   {
     title: "EduZen",
@@ -277,6 +166,7 @@ const projects = [
     githubUrl: "https://github.com/celersneha/EduZen",
     category: "Web Application",
     img: "/projects/EduZen.png",
+    year: 2025,
   },
   {
     title: "Chat with PDF",
@@ -327,6 +217,7 @@ const projects = [
     githubUrl: "https://github.com/celersneha/chat-with-pdf",
     category: "Web Application",
     img: "",
+    year: 2025,
   },
   {
     title: "TickTask",
@@ -366,6 +257,7 @@ const projects = [
     githubUrl: "https://github.com/SnehaSharma245/Todo-GraphQL",
     category: "Web Application",
     img: "/projects/TickTask.png",
+    year: 2025,
   },
   {
     title: "RoastRadar",
@@ -407,6 +299,7 @@ const projects = [
     githubUrl: "https://github.com/SnehaSharma245/RoastRadar",
     category: "Web Application",
     img: "/projects/RoastRadar.png",
+    year: 2025,
   },
 ];
 
