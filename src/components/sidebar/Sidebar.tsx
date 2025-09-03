@@ -141,7 +141,7 @@ const Sidebar = () => {
       </aside>
 
       {/* Mobile Top Bar */}
-      <div className="fixed top-0 left-0 w-full h-14 z-40 flex items-center justify-between px-4 md:hidden border-b border-border">
+      <div className="fixed top-0 left-0 w-full h-14 z-50 flex items-center justify-between px-4 md:hidden border-b border-border backdrop-blur-xl ">
         {/* Logo */}
         <div className="flex flex-col items-start">
           <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
