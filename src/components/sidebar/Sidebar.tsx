@@ -48,7 +48,7 @@ const socialLinks = [
 ];
 
 const SidebarContent = ({ active, setActive, onNavigate }: any) => (
-  <div className="flex flex-col h-full justify-between">
+  <div className="flex flex-col h-full gap-y-6 sticky top-0">
     <div>
       {/* Profile Section */}
       <div className="flex flex-col items-start px-6 pt-8 pb-4">
@@ -136,7 +136,13 @@ const Sidebar = () => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="relative h-full w-72 z-40 flex-col justify-between overflow-y-auto hidden md:flex">
+      <aside
+        className="fixed top-0 left-0 h-screen w-72 z-40 flex flex-col md:flex "
+        style={{
+          maxHeight: "100vh",
+        }}
+      >
+        {/* SidebarContent is now sticky */}
         <SidebarContent active={active} setActive={setActive} />
       </aside>
 
