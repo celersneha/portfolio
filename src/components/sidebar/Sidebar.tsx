@@ -137,7 +137,7 @@ const Sidebar = () => {
     <>
       {/* Desktop Sidebar */}
       <aside
-        className="fixed top-0 left-0 h-screen w-72 z-40 flex flex-col md:flex "
+        className="fixed top-0 left-0 h-screen w-72 z-40 flex-col hidden md:flex border-r border-border bg-background"
         style={{
           maxHeight: "100vh",
         }}
