@@ -21,7 +21,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder || "Search projects..."}
       className="pl-10"
-      autoFocus
     />
   </div>
 );
