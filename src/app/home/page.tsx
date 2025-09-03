@@ -1,0 +1,88 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowDown, ExternalLink } from "lucide-react";
+import Link from "next/link";
+
+const Hero = () => {
+  const skills = [
+    "Next.js",
+    "React.js",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "PostgreSQL",
+    "Docker",
+    "LangChain.js",
+    "RAG",
+    "Vector Databases",
+  ];
+
+  return (
+    <section
+      id="home"
+      className="h-screen flex items-center justify-center" // removed relative overflow-hidden
+    >
+      <div className="w-full h-full flex items-center justify-center px-4 py-4">
+        {/* Content */}
+        <div className="space-y-10 sm:space-y-2 md:space-y-2 animate-fade-in-up text-center md:text-left max-w-4xl">
+          <div className="space-y-6 sm:space-y-8 md:space-y-4">
+            <Badge variant="secondary" className="text-sm">
+              👋 Available for new opportunities
+            </Badge>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                Sneha
+              </span>
+            </h1>
+
+            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl text-muted-foreground">
+              Full Stack Developer
+            </h2>
+
+            <p className="text-lg sm:text-xl md:text-lg text-muted-foreground max-w-lg md:max-w-lg mx-auto md:mx-0 leading-relaxed">
+              I build exceptional digital experiences with modern technologies.
+              Specializing in building scalable web applications.
+            </p>
+          </div>
+
+          {/* Skills */}
+          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-2 justify-center md:justify-start">
+            {skills.map((skill, index) => (
+              <Badge
+                key={skill}
+                variant="outline"
+                className="text-sm animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 sm:pt-6 md:pt-0">
+            <Link
+              href="/projects"
+              className="group w-full sm:w-auto text-base"
+              passHref
+            >
+              <Button size="lg" className="w-full sm:w-auto text-base" asChild>
+                <span>
+                  See My Projects
+                  <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
