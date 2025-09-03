@@ -89,7 +89,7 @@ const Hero = () => {
                 asChild
               >
                 <span>
-                  See My Projects
+                  See My Work
                   <ExternalLink className="ml-2 w-3 h-3 " />
                 </span>
               </Button>
