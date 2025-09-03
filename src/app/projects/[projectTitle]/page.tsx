@@ -85,13 +85,20 @@ export default function ProjectDetailPage() {
 
         {/* Action Buttons */}
         <div className="flex gap-4">
-          <Button asChild className="flex-1 group" variant="fancy">
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 w-4 h-4  " />
-              Live Demo
-            </a>
-          </Button>
-          <Button variant="outline" asChild className="flex-1 group">
+          {/* Only show Live Demo button if liveUrl exists */}
+          {project.liveUrl && (
+            <Button asChild className="group w-max" variant="fancy">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 w-4 h-4  " />
+                Live Demo
+              </a>
+            </Button>
+          )}
+          <Button variant="outline" asChild className="group w-max">
             <a
               href={project.githubUrl}
               target="_blank"
