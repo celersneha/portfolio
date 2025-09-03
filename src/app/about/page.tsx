@@ -68,7 +68,11 @@ const AboutPage = () => {
             rel="noopener noreferrer"
             className="inline-block mt-4 md:ml-0 w-full sm:w-auto"
           >
-            <Button size="lg" className="font-bold w-full sm:w-auto">
+            <Button
+              size="lg"
+              className="font-bold w-full sm:w-auto"
+              variant="fancy"
+            >
               Show Resume
             </Button>
           </Link>

@@ -85,9 +85,9 @@ export default function ProjectDetailPage() {
 
         {/* Action Buttons */}
         <div className="flex gap-4">
-          <Button asChild className="flex-1 group">
+          <Button asChild className="flex-1 group" variant="fancy">
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ExternalLink className="mr-2 w-4 h-4  " />
               Live Demo
             </a>
           </Button>
@@ -97,7 +97,7 @@ export default function ProjectDetailPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+              <Github className="mr-2 w-4 h-4 " />
               View Code
             </a>
           </Button>

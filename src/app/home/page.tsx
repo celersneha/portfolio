@@ -76,16 +76,21 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 sm:pt-6 md:pt-0">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 sm:pt-6 md:pt-0 mt-5">
             <Link
               href="/projects"
               className="group w-full sm:w-auto text-base"
               passHref
             >
-              <Button size="lg" className="w-full sm:w-auto text-base" asChild>
+              <Button
+                size="lg"
+                variant="fancy"
+                className="w-full sm:w-auto text-base"
+                asChild
+              >
                 <span>
                   See My Projects
-                  <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="ml-2 w-3 h-3 " />
                 </span>
               </Button>
             </Link>

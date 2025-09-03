@@ -10,16 +10,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+          "bg-background text-foreground shadow-xs hover:bg-muted/70 hover:text-primary",
         destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive/80 text-white shadow-xs hover:bg-destructive/95 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/80",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+          "border border-border bg-background text-foreground shadow-xs hover:bg-muted/60 hover:text-primary dark:bg-background dark:border-border",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "bg-muted text-foreground shadow-xs hover:bg-muted/80 hover:text-primary",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+          "bg-background text-foreground hover:bg-muted/60 hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",
+        fancy:
+          "px-5 py-2 rounded-sm font-medium text-white border border-gray-600 transition-all duration-300 ease-out bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 ",
       },
       size: {
         default: "h-8 px-4 py-1.5 has-[>svg]:px-3",
@@ -35,6 +37,11 @@ const buttonVariants = cva(
   }
 );
 
+const fancyGradientStyle: React.CSSProperties = {
+  background:
+    "linear-gradient(135deg, oklch(0.16 0.04 260) 0%, oklch(0.20 0.05 260) 100%)",
+};
+
 function Button({
   className,
   variant,
@@ -46,11 +53,16 @@ function Button({
     asChild?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
+  const style =
+    variant === "fancy"
+      ? { ...props.style, ...fancyGradientStyle }
+      : props.style;
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      style={style}
       {...props}
     />
   );
