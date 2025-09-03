@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
+import Link from "next/link"; // Add this import
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,9 +63,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { href: "home", label: "Home" },
-    { href: "projects", label: "Projects" },
-    { href: "contact", label: "Contact" },
+    { href: "/home", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/tech-stack", label: "Tech Stack" },
+    { href: "/contact", label: "Contact" },
   ];
 
   const socialLinks = [
@@ -110,14 +113,14 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
+                <Link
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
+                  href={item.href}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full" />
-                </button>
+                </Link>
               ))}
             </nav>
 
@@ -194,13 +197,14 @@ const Header = () => {
 
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <button
+                  <Link
                     key={item.href}
-                    onClick={() => scrollToSection(item.href)}
+                    href={item.href}
                     className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-3 px-4 text-left rounded-lg hover:bg-muted/50 font-medium"
+                    onClick={closeMenu}
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 ))}
 
                 {/* Mobile Social Links */}
