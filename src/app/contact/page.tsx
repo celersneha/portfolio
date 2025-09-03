@@ -232,10 +232,25 @@ const Contact = () => {
               Let's discuss how we can bring your ideas to life with modern
               technologies and user-centered design.
             </p>
-            <Button size="lg" asChild className="group">
+            <Button size="lg" asChild className="group mb-4">
               <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
                 <Coffee className="mr-2 w-4 h-4" />
                 Let's grab a coffee
+              </a>
+            </Button>
+            {/* View Resume Button */}
+            <Button
+              asChild
+              size="lg"
+              variant="fancy"
+              className="mt-4 font-bold"
+            >
+              <a
+                href="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Resume
               </a>
             </Button>
           </div>
