@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -262,7 +265,47 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        {children}
+        {/* Enhanced Layout-wide background and floating elements */}
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
+          {/* More floating bubbles for stronger effect */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
+          <div
+            className="absolute top-1/4 left-1/2 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-float"
+            style={{ animationDelay: "0.5s" }}
+          />
+          <div
+            className="absolute top-1/3 right-24 w-16 h-16 bg-primary/15 rounded-full blur-lg animate-float"
+            style={{ animationDelay: "1.2s" }}
+          />
+          <div
+            className="absolute bottom-32 right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-float"
+            style={{ animationDelay: "1s" }}
+          />
+          <div
+            className="absolute bottom-24 left-1/3 w-20 h-20 bg-blue-400/15 rounded-full blur-xl animate-float"
+            style={{ animationDelay: "1.7s" }}
+          />
+          <div
+            className="absolute bottom-10 left-10 w-16 h-16 bg-primary/20 rounded-full blur-lg animate-float"
+            style={{ animationDelay: "2.3s" }}
+          />
+          <div
+            className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/15 rounded-full blur-lg animate-float"
+            style={{ animationDelay: "2s" }}
+          />
+          <div
+            className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-float"
+            style={{ animationDelay: "2.7s" }}
+          />
+        </div>
+
+        <div className="flex min-h-screen">
+          <Sidebar />
+          <div className="flex-1 flex flex-col min-h-screen">
+            <main className="flex-1">{children}</main>
+          </div>
+        </div>
       </body>
     </html>
   );
