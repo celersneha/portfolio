@@ -85,7 +85,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="fancy"
-                className="w-full sm:w-auto text-base"
+                className="w-[max-content] sm:w-auto text-base"
                 asChild
               >
                 <span>

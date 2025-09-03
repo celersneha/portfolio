@@ -21,7 +21,7 @@ const buttonVariants = cva(
           "bg-background text-foreground hover:bg-muted/60 hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",
         fancy:
-          "px-5 py-2 rounded-sm font-medium text-white border border-gray-600 transition-all duration-300 ease-out bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 ",
+          "px-5 py-2 rounded-sm font-medium text-white border border-gray-600 transition-all duration-300 ease-out bg-gradient-to-r from-gray-600 via-gray-700 to-gray-900 hover:from-gray-500 hover:via-gray-600 hover:to-gray-800",
       },
       size: {
         default: "h-8 px-4 py-1.5 has-[>svg]:px-3",
