@@ -1,7 +1,7 @@
 import React from "react";
 
 const SkeletonProject = () => (
-  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-blue-400/10 rounded-lg border border-border/30">
+  <div className="w-full h-48 flex items-center justify-center bg-gradient-to-br from-primary/10 to-blue-400/10 rounded-t-lg border border-border/30">
     <div className="flex flex-col items-center gap-2">
       <div className="w-16 h-16 rounded-lg bg-muted-foreground/10 animate-pulse flex items-center justify-center">
         <svg
