@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Github,
   Linkedin,
@@ -17,6 +17,7 @@ import {
 import { BsTwitterX } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { motion, AnimatePresence } from "motion/react";
 
 const navItems = [
   { href: "/home", label: "Home", icon: Home },
@@ -50,16 +51,18 @@ const SidebarContent = ({ active, setActive, onNavigate }: any) => (
   <div className="flex flex-col h-full justify-between">
     <div>
       {/* Profile Section */}
-      <div className="flex flex-col items-center px-6 pt-8 pb-4">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">S</span>
+      <div className="flex flex-col items-start px-6 pt-8 pb-4">
+        <div className="flex flex-col items-start gap-2">
+          <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
+            <img
+              src="/profile.jpg"
+              alt="Sneha Sharma"
+              className="w-full h-full object-cover"
+            />
           </div>
-        </div>
-        <div className="flex items-center space-x-1">
           <span className="font-semibold text-lg">Sneha Sharma</span>
+          <span className="text-muted-foreground text-sm">@celersneha</span>
         </div>
-        <span className="text-muted-foreground text-sm">@celersneha</span>
       </div>
 
       {/* Navigation */}
@@ -114,24 +117,21 @@ const SidebarContent = ({ active, setActive, onNavigate }: any) => (
 const Sidebar = () => {
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [isOpening, setIsOpening] = useState(false);
 
-  const closeMenu = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setMobileOpen(false);
-      setIsClosing(false);
-    }, 300);
-  };
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
-  const openMenu = () => {
-    setIsOpening(true);
-    setMobileOpen(true);
-    setTimeout(() => {
-      setIsOpening(false);
-    }, 50);
-  };
+  const closeMenu = () => setMobileOpen(false);
+  const openMenu = () => setMobileOpen(true);
 
   return (
     <>
@@ -143,16 +143,26 @@ const Sidebar = () => {
       {/* Mobile Top Bar */}
       <div className="fixed top-0 left-0 w-full h-14 z-40 flex items-center justify-between px-4 md:hidden border-b border-border">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">S</span>
+        <div className="flex flex-col items-start">
+          <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
+            <img
+              src="/profile.jpg"
+              alt="Sneha Sharma"
+              className="w-full h-full object-cover"
+            />
           </div>
+          <span className="font-semibold text-base hidden xs:inline-block">
+            Sneha Sharma
+          </span>
+          <span className="text-muted-foreground text-xs hidden xs:inline-block">
+            @celersneha
+          </span>
         </div>
         {/* Hamburger */}
         <Button
           variant="ghost"
           size="icon"
-          className="w-10 h-10 p-0 rounded-full"
+          className="w-10 h-10 p-0 rounded-full cursor-pointer"
           onClick={openMenu}
           aria-label="Open sidebar"
         >
@@ -160,92 +170,92 @@ const Sidebar = () => {
         </Button>
       </div>
 
-      {/* Mobile Sidebar Modal (Header style) */}
-      {mobileOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className={`fixed inset-0  backdrop-blur-sm z-40 md:hidden transition-opacity duration-300 ${
-              isClosing || isOpening ? "opacity-0" : "opacity-100"
-            }`}
-            onClick={closeMenu}
-          />
-
-          {/* Modal */}
-          <div className="fixed inset-0 z-50 md:hidden flex items-center justify-center p-4">
-            <div
-              className={`bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 w-full max-w-[280px] transition-all duration-300 ease-in-out ${
-                isClosing
-                  ? "opacity-0 scale-95 translate-y-2"
-                  : isOpening
-                  ? "opacity-0 scale-95 translate-y-2"
-                  : "opacity-100 scale-100 translate-y-0"
-              }`}
-            >
-              {/* Close Button */}
-              <div className="flex justify-end mb-4">
+      {/* Mobile Fullscreen Dropdown */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="mobile-sidebar"
+            initial={{ opacity: 0, y: -32 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -32 }}
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            className="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl flex flex-col md:hidden overflow-y-auto"
+          >
+            {/* Close Button */}
+            <div className="flex justify-end p-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-8 h-8 p-0 rounded-full"
+                onClick={closeMenu}
+                aria-label="Close sidebar"
+              >
+                <X className="w-5 h-5" />
+              </Button>
+            </div>
+            {/* Profile Section */}
+            <div className="flex flex-col items-start px-6 pt-2 pb-4">
+              <div className="flex flex-col items-start gap-2">
+                <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
+                  <img
+                    src="/profile.jpg"
+                    alt="Sneha Sharma"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="font-semibold text-lg">Sneha Sharma</span>
+                <span className="text-muted-foreground text-sm">
+                  @celersneha
+                </span>
+              </div>
+            </div>
+            {/* Navigation */}
+            <nav className="flex flex-col gap-1 px-6 mt-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg font-medium transition-colors duration-200 text-left
+                    ${
+                      active === item.href.replace("/", "")
+                        ? "bg-primary/10 text-primary"
+                        : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                    }`}
+                  onClick={() => {
+                    setActive(item.href.replace("/", ""));
+                    closeMenu();
+                  }}
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span>{item.label}</span>
+                </Link>
+              ))}
+            </nav>
+            {/* Social Links */}
+            <div className="flex items-center justify-center space-x-4 pt-8 pb-8">
+              {/* Changed mt-auto mb-8 to only pb-8 so links are always visible */}
+              {socialLinks.map((link) => (
                 <Button
+                  key={link.href}
                   variant="ghost"
                   size="sm"
-                  className="w-8 h-8 p-0 rounded-full"
-                  onClick={closeMenu}
-                  aria-label="Close sidebar"
+                  asChild
+                  className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
                 >
-                  <X className="w-4 h-4" />
-                </Button>
-              </div>
-
-              {/* Navigation */}
-              <nav className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-3 px-4 text-left rounded-lg hover:bg-muted/50 font-medium"
-                    onClick={closeMenu}
+                  <a
+                    href={link.href}
+                    aria-label={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {item.label}
-                  </Link>
-                ))}
-
-                {/* Mobile Social Links */}
-                <div className="flex items-center justify-center space-x-4 pt-6 border-t border-border">
-                  {socialLinks.map((link) => (
-                    <Button
-                      key={link.href}
-                      variant="ghost"
-                      size="sm"
-                      asChild
-                      className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
-                    >
-                      <a href={link.href} aria-label={link.label}>
-                        <link.icon className="w-5 h-5" />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              </nav>
+                    <link.icon className="w-5 h-5" />
+                  </a>
+                </Button>
+              ))}
             </div>
-          </div>
-        </>
-      )}
-
-      {/* Mobile sidebar slide-in animation (not used for modal) */}
-      <style jsx global>{`
-        @keyframes slide-in-left {
-          0% {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-in-left {
-          animation: slide-in-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-      `}</style>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
