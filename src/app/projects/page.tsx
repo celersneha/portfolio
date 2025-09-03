@@ -68,33 +68,18 @@ const Projects = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-lg" />
                     <div className="relative h-full bg-muted rounded-lg overflow-hidden flex items-center justify-center m-0">
-                      {/* Project image from public folder */}
-                      {(() => {
-                        let imgSrc = "";
-                        if (project.title === "InvisiFeed")
-                          imgSrc = "/projects/Invisifeed.png";
-                        else if (project.title === "DevZoku")
-                          imgSrc = "/projects/Devzoku.png";
-                        else if (project.title === "InactiTab")
-                          imgSrc = "/projects/Inactitab.png";
-                        else if (project.title === "EduZen")
-                          imgSrc = "/projects/Eduzen.png";
-                        else if (project.title === "TickTask")
-                          imgSrc = "/projects/Ticktask.png";
-                        // Add more mappings as needed
-
-                        return imgSrc ? (
-                          <img
-                            src={imgSrc}
-                            alt={project.title}
-                            className="object-contain w-full h-full rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 bg-muted p-2"
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        ) : (
-                          <SkeletonProject />
-                        );
-                      })()}
+                      {/* Project image from img property or fallback */}
+                      {project.img ? (
+                        <img
+                          src={project.img}
+                          alt={project.title}
+                          className="object-contain w-full h-full rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105 bg-muted p-2"
+                          loading="lazy"
+                          draggable={false}
+                        />
+                      ) : (
+                        <SkeletonProject />
+                      )}
                       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
                     </div>
                   </div>

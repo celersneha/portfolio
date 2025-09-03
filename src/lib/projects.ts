@@ -276,7 +276,7 @@ const projects = [
     liveUrl: "",
     githubUrl: "https://github.com/celersneha/EduZen",
     category: "Web Application",
-    img: "/projects/Eduzen.png",
+    img: "/projects/EduZen.png",
   },
   {
     title: "Chat with PDF",
