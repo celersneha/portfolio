@@ -136,23 +136,12 @@ const Sidebar = () => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="relative h-full w-72 bg-background/90 z-40 flex-col justify-between shadow-xl backdrop-blur-xl overflow-y-auto hidden md:flex">
-        {/* Background gradient and floating elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background -z-10" />
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float -z-10" />
-        <div
-          className="absolute bottom-32 right-16 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-float -z-10"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/15 rounded-full blur-lg animate-float -z-10"
-          style={{ animationDelay: "2s" }}
-        />
+      <aside className="relative h-full w-72 z-40 flex-col justify-between overflow-y-auto hidden md:flex">
         <SidebarContent active={active} setActive={setActive} />
       </aside>
 
       {/* Mobile Top Bar */}
-      <div className="fixed top-0 left-0 w-full h-14 backdrop-blur-xl z-40 flex items-center justify-between px-4 md:hidden border-b border-border">
+      <div className="fixed top-0 left-0 w-full h-14 z-40 flex items-center justify-between px-4 md:hidden border-b border-border">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -185,7 +174,7 @@ const Sidebar = () => {
           {/* Modal */}
           <div className="fixed inset-0 z-50 md:hidden flex items-center justify-center p-4">
             <div
-              className={`bg-background/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl p-6 w-full max-w-[280px] transition-all duration-300 ease-in-out ${
+              className={`bg-background/95 backdrop-blur-xl rounded-2xl shadow-2xl p-6 w-full max-w-[280px] transition-all duration-300 ease-in-out ${
                 isClosing
                   ? "opacity-0 scale-95 translate-y-2"
                   : isOpening
