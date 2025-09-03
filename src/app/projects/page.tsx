@@ -9,6 +9,7 @@ import projects from "@/lib/projects";
 import SkeletonProject from "@/components/SkeletonProject";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 const Projects = () => {
   const [search, setSearch] = useState("");
@@ -21,7 +22,13 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 relative z-0">
+    <motion.section
+      id="projects"
+      className="py-20 relative z-0"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -226,7 +233,7 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

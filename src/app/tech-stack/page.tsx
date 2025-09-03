@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Palette, Server, Database, Globe } from "lucide-react";
+import { motion } from "motion/react";
 
 const TechStack = () => {
   const skills = [
@@ -62,16 +63,19 @@ const TechStack = () => {
   ];
 
   return (
-    <section id="techstack" className="py-12 md:py-20 relative z-0">
+    <motion.section
+      id="techstack"
+      className="py-20 relative z-0"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
-            <Badge variant="outline" className="mb-4">
-              Tech Stack
-            </Badge>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 md:mb-6">
-              🛠️ Technologies I{" "}
+              Technologies I{" "}
               <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
                 work with
               </span>
@@ -113,7 +117,7 @@ const TechStack = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

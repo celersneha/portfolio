@@ -15,6 +15,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -77,7 +78,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 relative z-0">
+    <motion.section
+      id="contact"
+      className="py-20 relative z-0"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
@@ -229,15 +236,12 @@ const Contact = () => {
               <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
                 <Coffee className="mr-2 w-4 h-4" />
                 Let's grab a coffee
-                <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                  ☕
-                </span>
               </a>
             </Button>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

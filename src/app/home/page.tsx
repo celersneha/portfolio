@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const skills = [
@@ -21,17 +22,26 @@ const Hero = () => {
   ];
 
   return (
-    <section
+    <motion.section
       id="home"
-      className="h-screen flex items-center justify-center" // removed relative overflow-hidden
+      className="h-screen flex items-center justify-center py-20"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <div className="w-full h-full flex items-center justify-center px-4 py-4">
+      <div className="w-full h-full flex items-center justify-center px-4 py-8 pt-12 sm:pt-16">
+        {/* Added pt-12 sm:pt-16 for top padding */}
         {/* Content */}
         <div className="space-y-10 sm:space-y-2 md:space-y-2 animate-fade-in-up text-center md:text-left max-w-4xl">
           <div className="space-y-6 sm:space-y-8 md:space-y-4">
-            <Badge variant="secondary" className="text-sm">
-              👋 Available for new opportunities
-            </Badge>
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+              <Badge
+                variant="secondary"
+                className="text-sm flex items-center justify-center"
+              >
+                👋 Available for new opportunities
+              </Badge>
+            </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Hi, I'm{" "}
@@ -45,8 +55,9 @@ const Hero = () => {
             </h2>
 
             <p className="text-lg sm:text-xl md:text-lg text-muted-foreground max-w-lg md:max-w-lg mx-auto md:mx-0 leading-relaxed">
-              I build exceptional digital experiences with modern technologies.
-              Specializing in building scalable web applications.
+              I build exceptional digital experiences with modern technologies,
+              specializing in scalable web applications, with a remote-first
+              work preference.
             </p>
           </div>
 
@@ -81,7 +92,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -5,6 +5,7 @@ import projects from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Calendar } from "lucide-react";
+import { motion } from "motion/react";
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -17,7 +18,12 @@ export default function ProjectDetailPage() {
   if (!project) return notFound();
 
   return (
-    <section className="py-16 min-h-screen bg-background">
+    <motion.section
+      className="py-16 min-h-screen bg-background"
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
       <div className="container mx-auto max-w-3xl px-4">
         {/* Project Image */}
         <div className="mb-8 rounded-lg overflow-hidden shadow-lg bg-muted flex items-center justify-center h-64">
@@ -97,6 +103,6 @@ export default function ProjectDetailPage() {
           </Button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

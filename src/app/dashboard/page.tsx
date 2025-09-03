@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { WakaTimeStats } from "@/components/dashboard/WakaTimeStats";
 import { Contributions } from "@/components/dashboard/Contributions";
+import { motion } from "motion/react";
 
 export default function Dashboard() {
   const [heatmapData, setHeatmapData] = useState<
@@ -44,7 +45,12 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen  p-6">
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+      className="min-h-screen p-6 py-20"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -60,6 +66,6 @@ export default function Dashboard() {
         {/* Contributions Component */}
         <Contributions />
       </div>
-    </div>
+    </motion.div>
   );
 }
