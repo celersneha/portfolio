@@ -93,17 +93,32 @@ export const WakaTimeStats = () => {
   }, []);
 
   const StatCard = ({ title, value }: { title: string; value: string }) => (
-    <div className=" border border-slate-200 dark:border-slate-700 w-full px-4 py-3 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+    <div className="border border-slate-200 dark:border-slate-700 w-full px-4 py-3 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
       <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{title}</p>
       <div className="font-medium text-slate-800 dark:text-slate-100">
         {loading ? (
-          <div className="animate-pulse  h-5 w-20 rounded"></div>
+          <div className="animate-pulse bg-slate-200 dark:bg-slate-700 h-5 w-20 rounded" />
         ) : value === "" ? (
           "N/A"
         ) : (
           value
         )}
       </div>
+    </div>
+  );
+
+  // Skeleton for the whole stats grid
+  const StatsSkeleton = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div
+          key={i}
+          className="border border-slate-200 dark:border-slate-700 w-full px-4 py-3 rounded-xl shadow-sm"
+        >
+          <div className="h-4 w-24 bg-slate-200 dark:bg-slate-700 rounded mb-2 animate-pulse" />
+          <div className="h-5 w-20 bg-slate-200 dark:bg-slate-700 rounded animate-pulse" />
+        </div>
+      ))}
     </div>
   );
 
@@ -169,14 +184,18 @@ export const WakaTimeStats = () => {
           My WakaTime last 7 days stats.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <StatCard title="Start Date" value={data.startDate} />
-          <StatCard title="End Date" value={data.endDate} />
-          <StatCard title="Daily Coding Average" value={data.dailyAverage} />
-          <StatCard title="This Week Coding Time" value={data.weeklyTotal} />
-          <StatCard title="Best Day Coding Time" value={data.bestDay} />
-          <StatCard title="All Time Since Today" value={data.allTimeTotal} />
-        </div>
+        {loading ? (
+          <StatsSkeleton />
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <StatCard title="Start Date" value={data.startDate} />
+            <StatCard title="End Date" value={data.endDate} />
+            <StatCard title="Daily Coding Average" value={data.dailyAverage} />
+            <StatCard title="This Week Coding Time" value={data.weeklyTotal} />
+            <StatCard title="Best Day Coding Time" value={data.bestDay} />
+            <StatCard title="All Time Since Today" value={data.allTimeTotal} />
+          </div>
+        )}
 
         {/* <div className="mt-6">
           <StatList
