@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 const geistSans = Geist({
@@ -87,7 +85,7 @@ export const metadata: Metadata = {
       "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.snehasharma.me/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sneha Sharma - Full Stack Developer Portfolio",
@@ -101,7 +99,7 @@ export const metadata: Metadata = {
     title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
       "Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public.",
-    images: ["https://www.snehasharma.me/og-image.jpg"],
+    images: ["https://www.snehasharma.me/og-image.png"],
   },
   alternates: {
     canonical: "https://www.snehasharma.me",
@@ -119,7 +117,7 @@ const jsonLd = {
       url: "https://www.snehasharma.me",
       image: {
         "@type": "ImageObject",
-        url: "/og-image.jpg",
+        url: "https://www.snehasharma.me/og-image.png",
         width: 400,
         height: 400,
       },
@@ -261,6 +259,22 @@ export default function RootLayout({
         <meta name="geo.placename" content="Indore" />
         <meta name="geo.position" content="22.7196;75.8577" />
         <meta name="ICBM" content="22.7196, 75.8577" />
+        {/* Twitter Card absolute image */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@celersneha" />
+        <meta name="twitter:creator" content="@celersneha" />
+        <meta
+          name="twitter:title"
+          content="Sneha Sharma | Full-Stack Web Developer & Software Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.snehasharma.me/og-image.png"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
@@ -301,7 +315,6 @@ export default function RootLayout({
         </div>
 
         <div className="flex min-h-screen">
-          {/* Sidebar is now fixed, so add left margin to main content */}
           <Sidebar />
           <div className="flex-1 flex flex-col min-h-screen md:ml-72">
             <main className="flex-1">{children}</main>
