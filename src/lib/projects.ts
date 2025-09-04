@@ -169,11 +169,11 @@ const projects = [
     year: 2025,
   },
   {
-    title: "Chat with PDF",
+    title: "Documind",
     description:
-      "Full-stack app to upload PDFs and chat with them using AI. Built with Next.js 15, Bun, Mistral AI, and Qdrant vector search.",
+      "Full-stack app to upload PDFs and chat with them using AI. Built with Next.js 15, Bun, Mistral AI, Gemini AI, and Qdrant vector search.",
     longDescription:
-      "Chat with PDF is a sophisticated full-stack application that enables users to upload PDF documents and engage in intelligent conversations using AI. Features include PDF upload and parsing, AI-powered chat with Mistral AI, conversation memory, multi-file context selection, semantic vector search with Qdrant, and secure authentication with Clerk. Built with Next.js 15, Bun runtime, Express.js, PostgreSQL, and more.",
+      "Documind is a sophisticated full-stack application that enables users to upload PDF documents and engage in intelligent conversations using AI. Features include PDF upload and parsing, AI-powered chat with Mistral AI, Gemini AI, conversation memory, multi-file context selection, semantic vector search with Qdrant, and secure authentication with Clerk. Built with Next.js 15, Bun runtime, Express.js, PostgreSQL, and more.",
     technologies: [
       "Next.js 15",
       "TypeScript 5",
@@ -216,7 +216,7 @@ const projects = [
     liveUrl: "",
     githubUrl: "https://github.com/celersneha/chat-with-pdf",
     category: "Web Application",
-    img: "",
+    img: "/projects/Documind.png",
     year: 2025,
   },
   {
