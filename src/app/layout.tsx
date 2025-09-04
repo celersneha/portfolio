@@ -214,6 +214,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        {/* Favicons */}
         <link
           rel="icon"
           type="image/png"
@@ -248,10 +249,14 @@ export default function RootLayout({
           href="/favicon-images/favicon.ico"
           type="image/x-icon"
         />
+
+        {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* SEO extras */}
         <link rel="canonical" href="https://www.snehasharma.me" />
         <link rel="me" href="https://github.com/celersneha" />
         <link rel="me" href="https://linkedin.com/in/celersneha" />
@@ -259,22 +264,6 @@ export default function RootLayout({
         <meta name="geo.placename" content="Indore" />
         <meta name="geo.position" content="22.7196;75.8577" />
         <meta name="ICBM" content="22.7196, 75.8577" />
-        {/* Twitter Card absolute image */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@celersneha" />
-        <meta name="twitter:creator" content="@celersneha" />
-        <meta
-          name="twitter:title"
-          content="Sneha Sharma | Full-Stack Web Developer & Software Engineer"
-        />
-        <meta
-          name="twitter:description"
-          content="Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.snehasharma.me/og-image.png"
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
@@ -282,7 +271,7 @@ export default function RootLayout({
         {/* Enhanced Layout-wide background and floating elements */}
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-          {/* More floating bubbles for stronger effect */}
+          {/* floating bubbles */}
           <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
           <div
             className="absolute top-1/4 left-1/2 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-float"
