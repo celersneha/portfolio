@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
     description:
       "Portfolio of Sneha Sharma — Next.js & MERN developer, building scalable web applications and learning in public.",
-    images: ["/og-image.png"],
+    images: ["https://www.snehasharma.me/og-image.jpg"],
   },
   alternates: {
     canonical: "https://www.snehasharma.me",
