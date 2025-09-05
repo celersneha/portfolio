@@ -2,7 +2,6 @@ import WakaTimeStats from "@/components/dashboard/server/WakaTimeStats";
 import ContributionsServer from "@/components/dashboard/server/ContributionsServer";
 import DashboardClientWrapper from "@/components/dashboard/client/DashboardClientWrapper";
 
-// export const dynamic = "force-dynamic";
 export default function Dashboard() {
   return (
     <DashboardClientWrapper>
