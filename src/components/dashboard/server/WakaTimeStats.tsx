@@ -1,41 +1,25 @@
-import { Clock } from "lucide-react";
 import { unstable_cache } from "next/cache";
+import { Clock } from "lucide-react";
+import { fetchWakaTimeData, WakaTimeData } from "@/lib/dashboard/wakatime";
 
-type WakaTimeData = {
-  bestDay: string;
-  dailyAverage: string;
-  endDate: string;
-  startDate: string;
-  weeklyTotal: string;
-  allTimeTotal: string;
-};
-
-const getWakaTimeStats = unstable_cache(
-  async (): Promise<WakaTimeData> => {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-stats`
-    );
-    if (!res.ok) throw new Error("Failed to fetch WakaTime data");
-    return res.json();
-  },
-  ["wakatime-stats"],
-  { revalidate: 3600 }
-);
+const getWakaTimeStats = unstable_cache(fetchWakaTimeData, ["wakatime-stats"], {
+  revalidate: 3600,
+});
 
 export default async function WakaTimeStats() {
-  const data = await getWakaTimeStats();
+  const data: WakaTimeData = await getWakaTimeStats();
 
   const StatCard = ({ title, value }: { title: string; value: string }) => (
     <div className="border border-slate-200 dark:border-slate-700 w-full px-4 py-3 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
       <p className="text-sm text-slate-500 dark:text-slate-400 mb-1">{title}</p>
       <div className="font-medium text-slate-800 dark:text-slate-100">
-        {value === "" ? "N/A" : value}
+        {value || "N/A"}
       </div>
     </div>
   );
 
   return (
-    <div className="space-y-4  rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
+    <div className="space-y-4 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6">
       <div className="flex items-center mb-4">
         <span className="mr-2 text-blue-500">
           <Clock className="w-5 h-5" />
