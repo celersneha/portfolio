@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import ContributionsClient from "../client/ContributionsClient";
-import { fetchGitHubStats } from "@/lib/dashboard/github";
+import { fetchGitHubStats } from "@/actions/dashboard/github";
 
 const getGitHubStats = unstable_cache(fetchGitHubStats, ["github-stats"], {
   revalidate: 3600,

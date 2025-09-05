@@ -1,6 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { Clock } from "lucide-react";
-import { fetchWakaTimeData, WakaTimeData } from "@/lib/dashboard/wakatime";
+import { fetchWakaTimeData, WakaTimeData } from "@/actions/dashboard/wakatime";
 
 const getWakaTimeStats = unstable_cache(fetchWakaTimeData, ["wakatime-stats"], {
   revalidate: 3600,
