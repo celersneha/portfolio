@@ -5,23 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-sm",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive rounded-xs cursor-pointer",
   {
     variants: {
       variant: {
         default:
           "bg-background text-foreground shadow-xs hover:bg-muted/70 hover:text-primary",
         destructive:
-          "bg-destructive/80 text-white shadow-xs hover:bg-destructive/95 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/80",
+          "bg-destructive text-white shadow-xs hover:bg-destructive/95 focus-visible:ring-destructive/20 rounded-lg",
         outline:
-          "border border-border bg-background text-foreground shadow-xs hover:bg-muted/60 hover:text-primary dark:bg-background dark:border-border",
+          "border border-border bg-background text-foreground shadow-xs hover:bg-muted/60 hover:text-primary ",
         secondary:
           "bg-muted text-foreground shadow-xs hover:bg-muted/80 hover:text-primary",
         ghost:
           "bg-background text-foreground hover:bg-muted/60 hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",
         fancy:
-          "px-5 py-2 rounded-sm font-medium text-white border border-gray-600 transition-all duration-300 ease-out bg-gradient-to-r from-gray-600 via-gray-700 to-gray-900 hover:from-gray-500 hover:via-gray-600 hover:to-gray-800 cursor-pointer",
+          "px-5 py-2 rounded-sm font-medium text-primary-foreground border border-secondary transition-all duration-300 ease-out bg-secondary hover:bg-secondary/80 cursor-pointer",
       },
       size: {
         default: "h-8 px-4 py-1.5 has-[>svg]:px-3",
@@ -37,9 +37,9 @@ const buttonVariants = cva(
   }
 );
 
-const fancyGradientStyle: React.CSSProperties = {
-  background:
-    "linear-gradient(135deg, oklch(0.16 0.04 260) 0%, oklch(0.20 0.05 260) 100%)",
+const buttonStyle: React.CSSProperties = {
+  backgroundColor: "var(--secondary)",
+  color: "var(--primary-foreground)",
 };
 
 function Button({
@@ -54,9 +54,7 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
   const style =
-    variant === "fancy"
-      ? { ...props.style, ...fancyGradientStyle }
-      : props.style;
+    variant === "fancy" ? { ...props.style, ...buttonStyle } : props.style;
 
   return (
     <Comp

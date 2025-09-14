@@ -44,10 +44,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                Sneha
-              </span>
+              Hi, I'm <span className="text-primary">Sneha</span>
             </h1>
 
             <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl text-muted-foreground">
@@ -84,7 +81,7 @@ const Hero = () => {
             >
               <Button
                 size="lg"
-                variant="fancy"
+                variant="secondary"
                 className="w-[max-content] sm:w-auto text-base"
                 asChild
               >

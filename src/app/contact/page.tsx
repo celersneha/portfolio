@@ -94,9 +94,7 @@ const Contact = () => {
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Let's create something{" "}
-              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                amazing together
-              </span>
+              <span className="text-primary">amazing together</span>
             </h2>
             {/* Social/Contact Badges */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -232,27 +230,28 @@ const Contact = () => {
               Let's discuss how we can bring your ideas to life with modern
               technologies and user-centered design.
             </p>
-            <Button size="lg" asChild className="group mb-4">
-              <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
-                <Coffee className="mr-2 w-4 h-4" />
-                Let's grab a coffee
-              </a>
-            </Button>
-            {/* View Resume Button */}
-            <Button
-              asChild
-              size="lg"
-              variant="fancy"
-              className="mt-4 font-bold"
-            >
-              <a
-                href="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="flex flex-col md:flex-row justify-center items-center gap-2 mb-4">
+              <Button size="lg" asChild className="group" variant={"secondary"}>
+                <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
+                  <Coffee className="mr-2 w-4 h-4" />
+                  Let's grab a coffee
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="font-bold"
               >
-                View Resume
-              </a>
-            </Button>
+                <a
+                  href="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Resume
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

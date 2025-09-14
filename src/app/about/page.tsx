@@ -121,10 +121,7 @@ const AboutPage = () => {
                     👋 Available for new opportunities
                   </Badge>
                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
-                    Hi, I'm{" "}
-                    <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                      Sneha
-                    </span>
+                    Hi, I'm <span className="text-primary">Sneha</span>
                   </h1>
                   <h2 className="text-lg sm:text-xl mt-3 text-muted-foreground font-medium">
                     Full Stack Developer
@@ -198,7 +195,7 @@ const AboutPage = () => {
                       <Button
                         size="lg"
                         className="font-bold w-[max-content] sm:w-auto"
-                        variant="fancy"
+                        variant="secondary"
                       >
                         View Resume
                       </Button>

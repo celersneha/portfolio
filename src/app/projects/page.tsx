@@ -34,10 +34,7 @@ const Projects = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Projects that make{" "}
-              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                an impact
-              </span>
+              Projects that make <span className="text-primary">an impact</span>
             </h2>
           </div>
 
@@ -50,111 +47,94 @@ const Projects = () => {
               <Link
                 key={index}
                 href={`/projects/${project.title ?? index}`}
-                className="relative group block h-full"
+                className="relative group block h-full border border-secondary rounded-lg "
                 tabIndex={-1}
                 style={{ textDecoration: "none" }}
               >
-                <Card className="border-primary/50 bg-background/80 backdrop-blur-md hover:border-primary/50 transition-all duration-300 overflow-hidden flex flex-col h-full cursor-pointer">
-                  {/* Project Image */}
-                  <div className="relative  w-full px-2 pt-0 pb-0">
-                    {/* pt-0: remove top padding, px-2 for left/right space */}
+                {/* Project Image */}
+                <div className="relative w-full ">
+                  {/* removed px-2 pt-0 pb-0, now p-0 */}
+                  <div className="relative h-full w-full rounded-t-lg overflow-hidden flex items-center justify-center">
+                    {project.img ? (
+                      <img
+                        src={project.img}
+                        alt={project.title}
+                        className="object-contain w-full h-full rounded-t-lg shadow-md transition-transform duration-300"
+                        loading="lazy"
+                        draggable={false}
+                      />
+                    ) : (
+                      <SkeletonProject />
+                    )}
+                    <div className="absolute inset-0 group-hover:bg-black/20 transition-colors pointer-events-none" />
+                    {/* Hover Overlay for Details - only over image */}
                     <div
-                      className="relative h-full w-full rounded-t-lg overflow-hidden flex items-center justify-center"
-                      style={{
-                        background: "transparent",
-                        margin: 0,
-                      }}
+                      className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/70 transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+                      tabIndex={-1}
                     >
-                      {project.img ? (
-                        <img
-                          src={project.img}
-                          alt={project.title}
-                          className="object-contain w-full h-full rounded-t-lg shadow-md transition-transform duration-300"
-                          loading="lazy"
-                          draggable={false}
-                        />
-                      ) : (
-                        <SkeletonProject />
-                      )}
-                      <div className="absolute inset-0 group-hover:bg-black/20 transition-colors pointer-events-none" />
-                      {/* Hover Overlay for Details - only over image */}
-                      <div
-                        className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/70 transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
-                        tabIndex={-1}
-                      >
-                        <span className="text-white font-semibold text-base px-4 py-2 rounded">
-                          View Details
-                        </span>
-                      </div>
+                      <span className="text-white font-semibold text-base px-4 py-2 rounded">
+                        View Details
+                      </span>
                     </div>
                   </div>
-                  {/* Project Content */}
-                  <div className="flex flex-col flex-1 p-5">
-                    {" "}
-                    {/* reduced padding */}
-                    <CardHeader className="p-0 mb-2">
-                      {" "}
+                </div>
+                {/* Project Content */}
+                <div className="flex flex-col flex-1 p-3">
+                  {/* removed p-5, now p-0 */}
+                  <CardHeader className="p-0 mb-2">
+                    {/* reduced margin-bottom */}
+                    <div className="flex items-center justify-between mb-1">
                       {/* reduced margin-bottom */}
-                      <div className="flex items-center justify-between mb-1">
-                        {" "}
+                      <Badge
+                        variant="secondary"
+                        className="text-xs border-primary/40"
+                      >
+                        {project.category}
+                      </Badge>
+                      <div className="flex items-center space-x-1 text-sm text-muted-foreground">
+                        <Calendar className="w-4 h-4" />
+                        <span>{project.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-1">
+                      {/* reduced text size and margin-bottom */}
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed line-clamp-3 mb-1">
+                      {/* added mb-1 */}
+                      {project.description}
+                    </p>
+                  </CardHeader>
+                  <CardContent className="p-0 space-y-2 mt-1">
+                    {/* reduced space-y and margin-top */}
+                    {/* Technologies */}
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">
                         {/* reduced margin-bottom */}
-                        <Badge
-                          variant="secondary"
-                          className="text-xs border-primary/40"
-                        >
-                          {project.category}
-                        </Badge>
-                        <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-                          {" "}
-                          {/* reduced space-x */}
-                          <Calendar className="w-4 h-4" />
-                          <span>{project.year}</span>
-                        </div>
+                        Tech Stack
+                      </h4>
+                      <div className="flex flex-wrap gap-1">
+                        {/* reduced gap */}
+                        {project.technologies
+                          .slice(0, 3)
+                          .map((tech, techIndex) => (
+                            <Badge
+                              key={techIndex}
+                              variant="outline"
+                              className="text-xs"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        {project.technologies.length > 3 && (
+                          <span className="text-xs text-muted-foreground">
+                            +{project.technologies.length - 3} more
+                          </span>
+                        )}
                       </div>
-                      <h3 className="text-xl font-bold mb-1">
-                        {" "}
-                        {/* reduced text size and margin-bottom */}
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed line-clamp-3 mb-1">
-                        {" "}
-                        {/* added mb-1 */}
-                        {project.description}
-                      </p>
-                    </CardHeader>
-                    <CardContent className="p-0 space-y-2 mt-1">
-                      {" "}
-                      {/* reduced space-y and margin-top */}
-                      {/* Technologies */}
-                      <div>
-                        <h4 className="font-semibold mb-1 text-sm">
-                          {" "}
-                          {/* reduced margin-bottom */}
-                          Tech Stack
-                        </h4>
-                        <div className="flex flex-wrap gap-1">
-                          {" "}
-                          {/* reduced gap */}
-                          {project.technologies
-                            .slice(0, 3)
-                            .map((tech, techIndex) => (
-                              <Badge
-                                key={techIndex}
-                                variant="outline"
-                                className="text-xs"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          {project.technologies.length > 3 && (
-                            <span className="text-xs text-muted-foreground">
-                              +{project.technologies.length - 3} more
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      {/* Action Buttons */}
-                      {/* <div className="flex flex-wrap gap-2 pt-2">
+                    </div>
+                    {/* Action Buttons */}
+                    {/* <div className="flex flex-wrap gap-2 pt-2">
                         <Button
                           asChild={false}
                           size="sm"
@@ -195,9 +175,8 @@ const Projects = () => {
                           </span>
                         </Button>
                       </div> */}
-                    </CardContent>
-                  </div>
-                </Card>
+                  </CardContent>
+                </div>
               </Link>
             ))}
           </div>
@@ -212,7 +191,7 @@ const Projects = () => {
               }
             >
               Let's Work Together
-              <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ExternalLink className="ml-2 w-4 h-4 " />
             </Button>
             {/* Explore More Projects Button */}
             <Button

@@ -50,39 +50,39 @@ export default function ContributionsClient({ stats }: { stats: StatsProps }) {
       </div>
 
       {stats.commitGraph.length > 0 && (
-        <CalendarHeatmap
-          startDate={new Date(stats.commitGraph[0].date)}
-          endDate={
-            new Date(stats.commitGraph[stats.commitGraph.length - 1].date)
-          }
-          values={stats.commitGraph.map((d) => ({
-            date: d.date,
-            count: Number(d.count),
-          }))}
-          classForValue={getColorClass}
-          onMouseOver={(e, v) =>
-            v && setCommits({ count: v.count, date: v.date })
-          }
-          onMouseLeave={() => setCommits({ count: null, date: "" })}
-        />
+        <>
+          <CalendarHeatmap
+            startDate={new Date(stats.commitGraph[0].date)}
+            endDate={
+              new Date(stats.commitGraph[stats.commitGraph.length - 1].date)
+            }
+            values={stats.commitGraph.map((d) => ({
+              date: d.date,
+              count: Number(d.count),
+            }))}
+            classForValue={getColorClass}
+            onMouseOver={(e, v) => {
+              if (v && v.count > 0)
+                setCommits({ count: v.count, date: v.date });
+            }}
+            onMouseLeave={() => setCommits({ count: null, date: "" })}
+          />
+          {commits.count && (
+            <div className="mt-4 bg-card border border-border shadow-lg rounded-xl px-3 py-2 flex flex-wrap items-center gap-1 max-w-xs w-full text-sm transition-all duration-200 animate-fade-in">
+              <span className="font-bold text-[#1fa463] text-base">
+                {commits.count}
+              </span>
+              <span className="text-foreground">contributions</span>
+              <span className="mx-1 text-xs text-muted-foreground">on</span>
+              <span className="font-mono text-xs text-[#43d67e] break-all">
+                {commits.date}
+              </span>
+            </div>
+          )}
+        </>
       )}
 
-      {commits.count && (
-        <div className="fixed left-1/2 bottom-8 -translate-x-1/2 z-50 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg rounded-xl px-3 py-2 flex flex-wrap items-center gap-1 max-w-xs w-full text-sm transition-all duration-200 animate-fade-in">
-          <span className="font-bold text-green-600 text-base">
-            {commits.count}
-          </span>
-          <span className="text-slate-700 dark:text-slate-300">
-            contributions
-          </span>
-          <span className="mx-1 text-xs text-slate-400">on</span>
-          <span className="font-mono text-xs text-blue-500 break-all">
-            {commits.date}
-          </span>
-        </div>
-      )}
-
-      <Link href="https://github.com/celersneha" className="text-blue-500">
+      <Link href="https://github.com/celersneha" className="text-green-500">
         @celersneha
       </Link>
     </div>

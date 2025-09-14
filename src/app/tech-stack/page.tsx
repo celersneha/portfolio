@@ -20,7 +20,6 @@ const TechStack = () => {
         "CSS3",
         "Component Libraries",
       ],
-      color: "from-blue-500 to-purple-500",
     },
     {
       category: "Backend Development",
@@ -33,19 +32,16 @@ const TechStack = () => {
         "WebSocket",
         "JWT",
       ],
-      color: "from-green-500 to-teal-500",
     },
     {
       category: "Databases",
       icon: Database,
       technologies: ["MongoDB", "PostgreSQL", "Redis"],
-      color: "from-orange-500 to-red-500",
     },
     {
       category: "GenAI",
       icon: Code,
       technologies: ["LangChain.js", "Vector Databases", "RAG Pipelines"],
-      color: "from-purple-500 to-pink-500",
     },
     {
       category: "Tools & Services",
@@ -58,7 +54,6 @@ const TechStack = () => {
         "GitHub Actions",
         "Browser APIs",
       ],
-      color: "from-indigo-500 to-blue-500",
     },
   ];
 
@@ -75,10 +70,7 @@ const TechStack = () => {
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4 md:mb-6">
-              Technologies I{" "}
-              <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                work with
-              </span>
+              Technologies I <span className="text-primary">work with</span>
             </h2>
           </div>
 
@@ -87,15 +79,13 @@ const TechStack = () => {
             {skills.map((skill, index) => (
               <Card
                 key={index}
-                className={`border-border/50 backdrop-blur-md hover:border-primary/50 transition-all duration-300 hover:scale-105 group w-full ${
+                className={`border-border/50 backdrop-blur-md hover:border-primary/50 transition-all duration-300  group w-full ${
                   index === 4 ? "lg:col-start-2" : ""
                 }`}
               >
                 <CardContent className="p-4 md:p-6 text-center">
-                  <div
-                    className={`inline-flex p-2 md:p-3 rounded-full bg-gradient-to-r ${skill.color} mb-3 md:mb-4 group-hover:scale-110 transition-transform`}
-                  >
-                    <skill.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <div className="inline-flex p-2 md:p-3 rounded-full bg-primary mb-3 md:mb-4  transition-transform">
+                    <skill.icon className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                   </div>
                   <h4 className="font-semibold text-base md:text-lg mb-2 md:mb-3">
                     {skill.category}
