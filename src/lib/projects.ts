@@ -119,10 +119,15 @@ const projects = [
       "TailwindCSS",
     ],
     features: [
-      "Automatic tab suspension",
-      "Customizable settings",
-      "Memory usage tracking",
-      "Media tab detection",
+      "Automatic tab tracking and inactivity detection with sleep indicators (💤)",
+      "Smart protection for tabs with media playback, video calls, pinned tabs, and whitelisted domains",
+      "Real-time CPU and memory usage monitoring for each tab with color-coded indicators",
+      "Bulk tab management: multi-select, sort, filter, and batch close/whitelist tabs",
+      "Customizable inactivity timers and behavior settings",
+      "Auto-close history with restoration and configurable retention limits",
+      "Manual and automatic tab protection options",
+      "Visual feedback for tab states and resource usage",
+      "Manifest V3 Chrome extension architecture for security and performance",
     ],
     liveUrl: "https://inactitab.vercel.app",
     githubUrl: "https://github.com/celersneha/inactitab",
@@ -137,21 +142,18 @@ const projects = [
     longDescription:
       "EduZen is a comprehensive AI education platform that transforms how students interact with academic content. It features AI syllabus analysis, intelligent test generation, smart answer explanations, AI-powered analytics, and adaptive learning. Built with Next.js 15, MongoDB, Google Gemini 2.0 Flash, and more.",
     technologies: [
-      "Next.js 15",
+      "Next.js",
       "TypeScript",
       "Tailwind CSS",
       "Shadcn UI",
       "Framer Motion",
       "React Hook Form",
       "Zod",
-      "Lucide React",
       "MongoDB Atlas",
       "Mongoose",
       "NextAuth.js",
       "Google Gemini 2.0 Flash API",
       "PDF Processing",
-      "Machine Learning",
-      "Sonner",
     ],
     features: [
       "AI-powered syllabus analyzer & organizer",
@@ -163,7 +165,6 @@ const projects = [
       "Subject management with PDF upload",
       "Comprehensive performance dashboard",
       "Personalized study recommendations",
-      "Responsive, accessible UI",
     ],
     liveUrl: "",
     githubUrl: "https://github.com/celersneha/EduZen",
@@ -172,26 +173,26 @@ const projects = [
     year: 2025,
   },
   {
-    title: "Documind",
+    title: "PdfIQ",
     description:
       "Full-stack app to upload PDFs and chat with them using AI. Built with Next.js 15, Bun, Mistral AI, Gemini AI, and Qdrant vector search.",
     longDescription:
-      "Documind is a sophisticated full-stack application that enables users to upload PDF documents and engage in intelligent conversations using AI. Features include PDF upload and parsing, AI-powered chat with Mistral AI, Gemini AI, conversation memory, multi-file context selection, semantic vector search with Qdrant, and secure authentication with Clerk. Built with Next.js 15, Bun runtime, Express.js, PostgreSQL, and more.",
+      "PdfIQ is a sophisticated full-stack application that enables users to upload PDF documents and engage in intelligent conversations using AI. Features include PDF upload and parsing, AI-powered chat with Mistral AI, Gemini AI, conversation memory, multi-file context selection, semantic vector search with Qdrant, and secure authentication with Clerk. Built with Next.js, Bun runtime, Express.js, PostgreSQL, and more.",
     technologies: [
-      "Next.js 15",
-      "TypeScript 5",
-      "Tailwind CSS 4",
-      "Radix UI",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn",
       "TanStack React Query v5",
       "Axios",
       "Lucide React",
       "Streamdown",
       "Bun",
-      "Express.js 5",
+      "Express.js",
       "Drizzle ORM",
-      "PostgreSQL 17.5",
+      "PostgreSQL",
       "Qdrant",
-      "Valkey (Redis-compatible)",
+      "Valkey",
       "Adminer",
       "Docker",
       "Docker Compose",
@@ -229,7 +230,7 @@ const projects = [
     longDescription:
       "TickTask is a sleek, modern full-stack todo application powered by GraphQL, React, TypeScript, and MongoDB. It features secure authentication, real-time updates, smart filtering, notifications, and a beautiful blue-purple gradient theme. Built with Apollo Client/Server, Styled Components, React Hook Form, and JWT authentication for a seamless and secure experience.",
     technologies: [
-      "React 18+",
+      "React",
       "TypeScript",
       "Apollo Client",
       "Styled Components",
@@ -242,7 +243,6 @@ const projects = [
       "MongoDB",
       "Mongoose",
       "JWT",
-      "Bun",
     ],
     features: [
       "User authentication with JWT",
@@ -265,11 +265,11 @@ const projects = [
   {
     title: "RoastRadar",
     description:
-      "A modern, full-stack anonymous roasting platform built with Next.js 14. Send and receive savage (but fun) anonymous feedback with AI-powered roast suggestions.",
+      "A modern, full-stack anonymous roasting platform built with Next.js. Send and receive savage (but fun) anonymous feedback with AI-powered roast suggestions.",
     longDescription:
-      "RoastRadar is a modern, full-stack anonymous messaging platform where users can send and receive savage (but fun) anonymous feedback. Features include anonymous messaging, AI-powered roast suggestions (Google Gemini), real-time dashboard, email verification, secure authentication, and a beautiful purple glassmorphism UI. Built with Next.js 14, MongoDB, NextAuth.js, shadcn/ui, and more.",
+      "RoastRadar is a modern, full-stack anonymous messaging platform where users can send and receive savage (but fun) anonymous feedback. Features include anonymous messaging, AI-powered roast suggestions (Google Gemini), real-time dashboard, email verification, secure authentication, and a beautiful purple glassmorphism UI. Built with Next.js, MongoDB, NextAuth.js, shadcn/ui, and more.",
     technologies: [
-      "Next.js 14",
+      "Next.js",
       "TypeScript",
       "Tailwind CSS",
       "shadcn/ui",
@@ -284,7 +284,6 @@ const projects = [
       "Nodemailer",
       "Google Gemini API",
       "Vercel",
-      "ESLint",
     ],
     features: [
       "Anonymous messaging",
@@ -311,8 +310,8 @@ const projects = [
     longDescription:
       "CineHue is a movie discovery platform built with React, React Router, and Tailwind CSS. It features real-time search suggestions, keyboard navigation, detailed movie pages, star ratings, and a modern dark theme. Powered by the OMDB API, CineHue offers a seamless and visually engaging way to explore movies. The app includes responsive design, smooth animations, custom loading screens, and a focus on accessibility and user experience.",
     technologies: [
-      "React 18+",
-      "React Router v7",
+      "React ",
+      "React Router ",
       "TypeScript",
       "Tailwind CSS",
       "Axios",

@@ -87,7 +87,7 @@ export default function ProjectDetailPage() {
         <div className="flex gap-4">
           {/* Only show Live Demo button if liveUrl exists */}
           {project.liveUrl && (
-            <Button asChild className="group w-max" variant="fancy">
+            <Button asChild className="group w-max" variant="secondary">
               <a
                 href={project.liveUrl}
                 target="_blank"
