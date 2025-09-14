@@ -43,7 +43,7 @@ const AboutPage = () => {
                 className={`px-4 py-2 rounded-l-md font-semibold transition-colors ${
                   tab === "intro"
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-accent"
+                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-primary-foreground"
                 }`}
                 onClick={() => handleTabChange("intro")}
                 type="button"
@@ -54,7 +54,7 @@ const AboutPage = () => {
                 className={`px-4 py-2 rounded-r-md font-semibold transition-colors ${
                   tab === "resume"
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-accent"
+                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-primary-foreground"
                 }`}
                 onClick={() => handleTabChange("resume")}
                 type="button"
