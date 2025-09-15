@@ -1,9 +1,66 @@
 "use client";
 
+import React, { JSX } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Palette, Server, Database, Globe } from "lucide-react";
 import { motion } from "motion/react";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiRedis,
+  SiLangchain,
+  SiGithub,
+  SiDocker,
+  SiGit,
+  SiPostman,
+  SiGithubactions,
+  SiShadcnui,
+  SiGooglechrome,
+} from "react-icons/si";
+import { TbDatabase } from "react-icons/tb";
+import { FaBrain, FaDigitalOcean } from "react-icons/fa";
+import { BiGitBranch } from "react-icons/bi";
+
+const techIcons: Record<string, JSX.Element> = {
+  "Next.js": <SiNextdotjs className="mr-1 w-4 h-4" color="#fff" />,
+  "React.js": <SiReact className="mr-1 w-4 h-4" color="#61DAFB" />,
+  TypeScript: <SiTypescript className="mr-1 w-4 h-4" color="#3178C6" />,
+  JavaScript: <SiJavascript className="mr-1 w-4 h-4" color="#F7DF1E" />,
+  "Tailwind CSS": <SiTailwindcss className="mr-1 w-4 h-4" color="#38B2AC" />,
+  HTML5: <SiHtml5 className="mr-1 w-4 h-4" color="#E34F26" />,
+  CSS3: <SiCss3 className="mr-1 w-4 h-4" color="#1572B6" />,
+  "Node.js": <SiNodedotjs className="mr-1 w-4 h-4" color="#339933" />,
+  "Express.js": <SiExpress className="mr-1 w-4 h-4" color="#fff" />,
+  "API Integration": <Globe className="mr-1 w-4 h-4" />,
+  Webhooks: <BiGitBranch className="mr-1 w-4 h-4" color="#a855f7" />,
+  WebSocket: <TbDatabase className="mr-1 w-4 h-4" color="#f59e42" />,
+  MongoDB: <SiMongodb className="mr-1 w-4 h-4" color="#47A248" />,
+  PostgreSQL: <SiPostgresql className="mr-1 w-4 h-4" color="#336791" />,
+  Redis: <SiRedis className="mr-1 w-4 h-4" color="#DC382D" />,
+  "LangChain.js": <FaBrain className="mr-1 w-4 h-4" color="#a855f7" />,
+  "Vector Databases": <TbDatabase className="mr-1 w-4 h-4" color="#10b981" />,
+  "RAG Pipelines": <FaBrain className="mr-1 w-4 h-4" color="#f59e42" />,
+  Git: <SiGit className="mr-1 w-4 h-4" color="#F05032" />,
+  Postman: <SiPostman className="mr-1 w-4 h-4" color="#FF6C37" />,
+  Docker: <SiDocker className="mr-1 w-4 h-4" color="#2496ED" />,
+  GitHub: <SiGithub className="mr-1 w-4 h-4" color="#fff" />,
+  "GitHub Actions": (
+    <SiGithubactions className="mr-1 w-4 h-4" color="#2088FF" />
+  ),
+  "Browser APIs": <SiGooglechrome className="mr-1 w-4 h-4" color="#4285F4" />,
+  Shadcn: <SiShadcnui className="mr-1 w-4 h-4" />,
+  "Digital Ocean": <FaDigitalOcean className="mr-1 w-4 h-4" color="#2496ED" />,
+};
 
 const TechStack = () => {
   const skills = [
@@ -18,7 +75,7 @@ const TechStack = () => {
         "Tailwind CSS",
         "HTML5",
         "CSS3",
-        "Component Libraries",
+        "Shadcn",
       ],
     },
     {
@@ -53,6 +110,7 @@ const TechStack = () => {
         "GitHub",
         "GitHub Actions",
         "Browser APIs",
+        "Digital Ocean",
       ],
     },
   ];
@@ -95,8 +153,9 @@ const TechStack = () => {
                       <Badge
                         key={techIndex}
                         variant="secondary"
-                        className="text-xs"
+                        className="text-xs flex items-center"
                       >
+                        {techIcons[tech]}
                         {tech}
                       </Badge>
                     ))}

@@ -5,20 +5,66 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiDocker,
+  SiLangchain,
+} from "react-icons/si";
+import { TbDatabase } from "react-icons/tb";
+import { FaBrain, FaDigitalOcean } from "react-icons/fa";
 
 const Hero = () => {
   const skills = [
-    "Next.js",
-    "React.js",
-    "TypeScript",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "PostgreSQL",
-    "Docker",
-    "LangChain.js",
-    "RAG",
-    "Vector Databases",
+    {
+      name: "Next.js",
+      icon: <SiNextdotjs className="mr-1 w-4 h-4" color="#fff" />,
+    },
+    {
+      name: "React.js",
+      icon: <SiReact className="mr-1 w-4 h-4" color="#61DAFB" />,
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="mr-1 w-4 h-4" color="#3178C6" />,
+    },
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="mr-1 w-4 h-4" color="#339933" />,
+    },
+    {
+      name: "Express.js",
+      icon: <SiExpress className="mr-1 w-4 h-4" color="#fff" />,
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="mr-1 w-4 h-4" color="#47A248" />,
+    },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="mr-1 w-4 h-4" color="#336791" />,
+    },
+    {
+      name: "Docker",
+      icon: <SiDocker className="mr-1 w-4 h-4" color="#2496ED" />,
+    },
+    {
+      name: "LangChain.js",
+      icon: <SiLangchain className="mr-1 w-4 h-4" color="#fff" />,
+    },
+    {
+      name: "Digital Ocean",
+      icon: <FaDigitalOcean className="mr-1 w-4 h-4" color="#2496ED" />,
+    },
+    {
+      name: "Vector Databases",
+      icon: <TbDatabase className="mr-1 w-4 h-4" color="#10b981" />,
+    },
   ];
 
   return (
@@ -30,7 +76,6 @@ const Hero = () => {
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
       <div className="w-full h-full flex items-center justify-center px-4 py-8 pt-12 sm:pt-16">
-        {/* Added pt-12 sm:pt-16 for top padding */}
         {/* Content */}
         <div className="space-y-10 sm:space-y-2 md:space-y-2 animate-fade-in-up text-center md:text-left max-w-4xl">
           <div className="space-y-6 sm:space-y-8 md:space-y-4">
@@ -62,14 +107,22 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-2 justify-center md:justify-start">
             {skills.map((skill, index) => (
               <Badge
-                key={skill}
+                key={skill.name}
                 variant="outline"
-                className="text-sm animate-fade-in-up"
+                className="text-sm animate-fade-in-up flex items-center"
                 style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
               >
-                {skill}
+                {skill.icon}
+                {skill.name}
               </Badge>
             ))}
+            <Badge
+              variant="outline"
+              className="text-xs font-semibold animate-fade-in-up flex items-center"
+              style={{ animationDelay: `${skills.length * 0.1 + 0.5}s` }}
+            >
+              ...and many more
+            </Badge>
           </div>
 
           {/* CTA Buttons */}
