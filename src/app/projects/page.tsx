@@ -10,6 +10,7 @@ import SkeletonProject from "@/components/SkeletonProject";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const Projects = () => {
   const [search, setSearch] = useState("");
@@ -56,9 +57,11 @@ const Projects = () => {
                   {/* removed px-2 pt-0 pb-0, now p-0 */}
                   <div className="relative h-full w-full rounded-t-lg overflow-hidden flex items-center justify-center">
                     {project.img ? (
-                      <img
+                      <Image
                         src={project.img}
                         alt={project.title}
+                        width={500}
+                        height={300}
                         className="object-contain w-full h-full rounded-t-lg shadow-md transition-transform duration-300"
                         loading="lazy"
                         draggable={false}

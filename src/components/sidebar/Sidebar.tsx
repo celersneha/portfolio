@@ -18,6 +18,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const navItems = [
   { href: "/home", label: "Home", icon: Home },
@@ -54,10 +55,12 @@ const SidebarContent = ({ active, setActive, onNavigate }: any) => (
       <div className="flex flex-col items-start px-6 pt-8 pb-4">
         <div className="flex flex-col items-start gap-2">
           <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
-            <img
+            <Image
               src="/profile.jpg"
               alt="Sneha Sharma"
               className="w-full h-full object-cover"
+              width={48}
+              height={48}
             />
           </div>
           <span className="font-semibold text-lg">Sneha Sharma</span>
@@ -151,10 +154,12 @@ const Sidebar = () => {
         {/* Logo */}
         <div className="flex flex-col items-start">
           <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
-            <img
+            <Image
               src="/profile.jpg"
               alt="Sneha Sharma"
               className="w-full h-full object-cover"
+              width={48}
+              height={48}
             />
           </div>
           <span className="font-semibold text-base hidden xs:inline-block">
@@ -203,10 +208,12 @@ const Sidebar = () => {
             <div className="flex flex-col items-start px-6 pt-2 pb-4">
               <div className="flex flex-col items-start gap-2">
                 <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center bg-primary">
-                  <img
+                  <Image
                     src="/profile.jpg"
                     alt="Sneha Sharma"
                     className="w-full h-full object-cover"
+                    width={48}
+                    height={48}
                   />
                 </div>
                 <span className="font-semibold text-lg">Sneha Sharma</span>
