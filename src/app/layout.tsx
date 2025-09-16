@@ -401,6 +401,9 @@ const jsonLd = {
       about: {
         "@id": "https://www.snehasharma.me/#person",
       },
+      mainEntity: {
+        "@id": "https://www.snehasharma.me/#person",
+      },
       description:
         "Professional portfolio showcasing Sneha Sharma's expertise in full-stack web development, AI integration, and modern software engineering practices",
       dateModified: "2025-01-15",
