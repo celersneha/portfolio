@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -99,7 +100,7 @@ const Contact = () => {
             {/* Social/Contact Badges */}
             <div className="flex flex-wrap justify-center gap-3 mb-6">
               {socialLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
                   href={link.href}
                   target="_blank"
@@ -113,7 +114,7 @@ const Contact = () => {
                     <link.icon className="w-4 h-4" />
                     {link.label}
                   </Badge>
-                </a>
+                </Link>
               ))}
             </div>
             <div className="text-muted-foreground text-base font-medium">
@@ -232,10 +233,10 @@ const Contact = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center gap-2 mb-4">
               <Button size="lg" asChild className="group" variant={"secondary"}>
-                <a href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
+                <Link href="mailto:celersneha@gmail.com?subject=Project Collaboration Invitation&body=Hey Sneha, let’s connect for an interesting project!">
                   <Coffee className="mr-2 w-4 h-4" />
                   Let's grab a coffee
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild
@@ -243,13 +244,13 @@ const Contact = () => {
                 variant="secondary"
                 className="font-bold"
               >
-                <a
-                  href="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/view?usp=sharing"
+                <Link
+                  href="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   View Resume
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

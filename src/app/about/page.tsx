@@ -187,7 +187,7 @@ const AboutPage = () => {
                 >
                   <div className="flex flex-col items-start w-full">
                     <Link
-                      href="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/view?usp=sharing"
+                      href="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block md:ml-0 w-[max-content] sm:w-auto"
@@ -207,7 +207,7 @@ const AboutPage = () => {
                     {/* Resume Preview */}
                     <div className="w-full mt-8 rounded-lg overflow-hidden border border-border ">
                       <iframe
-                        src="https://drive.google.com/file/d/1VL1N0OO1w9xiiY8jMasHOG4wbnHNEnlA/preview"
+                        src="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/view?usp=sharing"
                         title="Sneha Resume Preview"
                         width="100%"
                         height="500"

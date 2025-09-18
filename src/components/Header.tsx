@@ -136,9 +136,9 @@ const Header = () => {
                     asChild
                     className="w-9 h-9 p-0"
                   >
-                    <a href={link.href} aria-label={link.label}>
+                    <Link href={link.href} aria-label={link.label}>
                       <link.icon className="w-4 h-4" />
-                    </a>
+                    </Link>
                   </Button>
                 ))}
               </div>
@@ -217,9 +217,9 @@ const Header = () => {
                       asChild
                       className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
                     >
-                      <a href={link.href} aria-label={link.label}>
+                      <Link href={link.href} aria-label={link.label}>
                         <link.icon className="w-5 h-5" />
-                      </a>
+                      </Link>
                     </Button>
                   ))}
                 </div>

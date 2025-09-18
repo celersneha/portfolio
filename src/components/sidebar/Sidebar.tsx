@@ -102,14 +102,14 @@ const SidebarContent = ({ active, setActive, onNavigate }: any) => (
             asChild
             className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
           >
-            <a
+            <Link
               href={link.href}
               aria-label={link.label}
               target="_blank"
               rel="noopener noreferrer"
             >
               <link.icon className="w-5 h-5" />
-            </a>
+            </Link>
           </Button>
         ))}
       </div>
@@ -255,14 +255,14 @@ const Sidebar = () => {
                   asChild
                   className="w-10 h-10 p-0 rounded-full hover:bg-primary/10"
                 >
-                  <a
+                  <Link
                     href={link.href}
                     aria-label={link.label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <link.icon className="w-5 h-5" />
-                  </a>
+                  </Link>
                 </Button>
               ))}
             </div>

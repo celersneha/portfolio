@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -96,17 +97,25 @@ export default function ProjectDetailPage() {
         {/* Only show Live Demo button if liveUrl exists */}
         {project.liveUrl && (
           <Button asChild className="group w-max" variant="secondary">
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ExternalLink className="mr-2 w-4 h-4  " />
               Live Demo
-            </a>
+            </Link>
           </Button>
         )}
         <Button variant="outline" asChild className="group w-max">
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+          <Link
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Github className="mr-2 w-4 h-4 " />
             View Code
-          </a>
+          </Link>
         </Button>
       </div>
     </motion.section>
