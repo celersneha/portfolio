@@ -207,7 +207,7 @@ const AboutPage = () => {
                     {/* Resume Preview */}
                     <div className="w-full mt-8 rounded-lg overflow-hidden border border-border ">
                       <iframe
-                        src="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/view?usp=sharing"
+                        src="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/preview"
                         title="Sneha Resume Preview"
                         width="100%"
                         height="500"
