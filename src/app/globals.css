@@ -179,3 +179,17 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+[data-sonner-toast] {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+  border-radius: 0.25rem !important;
+  border-bottom: 4px solid #facc15 !important; /* yellow-400 */
+  padding: 0.75rem 0.75rem !important;
+}
+
+/* For dark mode */
+.dark [data-sonner-toast] {
+  background: var(--background) !important;
+  color: var(--foreground) !important;
+}
