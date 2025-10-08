@@ -26,7 +26,7 @@ export default function ProjectDetailPage() {
 
   return (
     <motion.section
-      className="py-16 min-h-screen bg-background"
+      className="py-16 min-h-screen bg-background px-8"
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export default function ProjectDetailPage() {
           <Image
             src={project.img}
             alt={project.title}
-            className="object-contain w-full h-full"
+            className="object-contain w-full h-full rounded-md"
             loading="lazy"
             draggable={false}
             width={500}
@@ -52,7 +52,7 @@ export default function ProjectDetailPage() {
       </div>
 
       {/* Title & Category */}
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mt-5 mb-2">
         <h1 className="text-3xl font-bold">{project.title}</h1>
         <Badge variant="secondary" className="text-xs">
           {project.category}
