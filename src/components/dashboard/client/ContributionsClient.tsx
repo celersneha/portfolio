@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
+// @ts-ignore - no type declarations for this CSS side-effect import
 import "react-calendar-heatmap/dist/styles.css";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
