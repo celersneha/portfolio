@@ -21,7 +21,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 const navItems = [
-  { href: "/home", label: "Home", icon: Home },
+  { href: "/", label: "Home", icon: Home },
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/projects", label: "Projects", icon: FolderGit2 },
   { href: "/tech-stack", label: "Tech Stack", icon: BookOpen },
