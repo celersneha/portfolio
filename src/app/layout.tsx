@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -109,8 +110,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.snehasharma.me",
-    siteName: "Sneha Sharma - Full-Stack Web Developer",
-    title: "Sneha Sharma | Full-Stack Web Developer & Software Engineer",
+    siteName: "Sneha Sharma | Next.js + GenAI Developer",
+    title: "Sneha Sharma | Next.js + GenAI Developer",
     description:
       "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
     images: [
@@ -118,7 +119,7 @@ export const metadata: Metadata = {
         url: "https://www.snehasharma.me/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sneha Sharma - Full Stack Developer Portfolio",
+        alt: "Sneha Sharma | Next.js + GenAI Developer",
       },
     ],
   },
@@ -361,7 +362,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.snehasharma.me/#website",
       url: "https://www.snehasharma.me",
-      name: "Sneha Sharma - Full Stack Developer Portfolio",
+      name: "Sneha Sharma | Next.js + GenAI Developer",
       description:
         "Portfolio website showcasing full-stack web development projects, skills, and professional experience of Sneha Sharma",
       publisher: {
@@ -550,6 +551,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
+        <Toaster theme="system" position="bottom-right" closeButton={false} />
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="flex-1 flex flex-col min-h-screen md:ml-72">
