@@ -17,6 +17,9 @@ import {
 import { BsTwitterX } from "react-icons/bs";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { sendMail } from "@/actions/email/sendMail";
+import { toast } from "sonner";
+import { BiCheckCircle, BiXCircle } from "react-icons/bi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,14 +29,20 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:celersneha@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+    setLoading(true);
+
+    const res = await sendMail(formData);
+    setLoading(false);
+    if (res.success) {
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      toast.success("Message sent successfully!");
+    } else {
+      toast.error("Failed to send message. Try again.");
+    }
   };
 
   const handleChange = (
@@ -211,9 +220,16 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full group">
-                    <Send className="mr-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    Send Message
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full group"
+                    disabled={loading}
+                  >
+                    <Send
+                      className={`mr-2 w-4 h-4 ${loading ? "opacity-50" : ""}`}
+                    />
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
