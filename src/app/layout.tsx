@@ -7,32 +7,37 @@ import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.snehasharma.me"),
   title: {
-    default: "Sneha Sharma | Next.js + GenAI Developer",
-    template: "%s | Sneha Sharma",
+    default: "Sneha Sharma | Next.js & GenAI Developer",
+    template: "%s - Sneha Sharma | Next.js & GenAI Developer",
   },
   description:
-    "Full Stack Developer specializing in Next.js, GenAI, and modern web technologies. Expert in building scalable, high-performance applications with React.js, Node.js, MongoDB, and PostgreSQL. Focused on delivering user-centric solutions, AI-powered features, and seamless digital experiences. Based in Indore, India.",
+    "Full Stack Developer specializing in Next.js, GenAI, and modern web technologies. Experienced in building scalable, high-performance applications with React.js, Node.js, MongoDB, and PostgreSQL. Based in Indore, India.",
   keywords: [
     "Sneha Sharma",
     "celersneha",
-    "Sneha Sharma Portfolio",
     "Next.js Developer",
     "GenAI Developer",
     "Full Stack Developer",
     "React.js Developer",
     "Node.js Developer",
-    "MERN Stack",
-    "MERN Developer Indore",
+    "FastAPI Developer",
+    "Livekit Developer",
+    "Livekit",
+    "MERN Stack Developer",
     "Web Developer Indore",
     "MongoDB",
     "PostgreSQL",
@@ -47,11 +52,6 @@ export const metadata: Metadata = {
     "Acropolis Institute of Technology",
     "Payment Integration",
     "Razorpay",
-    "User-centric Solutions",
-    "Scalable Applications",
-    "High Performance Apps",
-    "Software Engineer India",
-    "Web Application Developer",
     "Scalable Applications",
     "High Performance Apps",
     "DevZoku",
@@ -87,20 +87,27 @@ export const metadata: Metadata = {
     "Freelance Developer",
     "Remote Work",
     "Tech Community",
-    "Learning in Public",
+    "The Algorithm",
+    "The Algorithm Software Company",
   ],
   authors: [{ name: "Sneha Sharma", url: "https://www.snehasharma.me" }],
   creator: "Sneha Sharma",
   publisher: "Sneha Sharma",
+  applicationName: "Sneha Sharma Portfolio",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
   verification: {
     google: "IANU7tJOZ8duM6yXQwKjzF7YQml50jSng7SVGHo3du0",
   },
+  manifest: "/favicon-images/site.webmanifest",
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
@@ -110,16 +117,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.snehasharma.me",
-    siteName: "Sneha Sharma | Next.js + GenAI Developer",
-    title: "Sneha Sharma | Next.js + GenAI Developer",
+    siteName: "Sneha Sharma Portfolio",
+    title: "Sneha Sharma | Next.js & GenAI Developer",
     description:
-      "Experienced Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India. Expert in RESTful APIs, GraphQL, and full-stack development.",
+      "Full Stack Developer specializing in Next.js, React.js, Node.js, Express.js, MongoDB, and PostgreSQL. Building scalable, high-performance web applications with modern technologies. Based in Indore, India.",
     images: [
       {
         url: "https://www.snehasharma.me/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sneha Sharma | Next.js + GenAI Developer",
+        alt: "Sneha Sharma - Next.js & GenAI Developer Portfolio",
+        type: "image/png",
+      },
+      {
+        url: "https://www.snehasharma.me/favicon-images/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "Sneha Sharma Profile",
+        type: "image/png",
       },
     ],
   },
@@ -127,15 +142,26 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@celersneha",
     creator: "@celersneha",
-    title: "Sneha Sharma | Next.js + GenAI Developer",
+    title: "Sneha Sharma | Next.js & GenAI Developer",
     description:
-      "Portfolio of Sneha Sharma — Next.js & MERN developer,  with emerging interest in GenAI, building scalable web applications and learning in public.",
-    images: ["https://www.snehasharma.me/og-image.png"],
+      "Portfolio of Sneha Sharma — Next.js & MERN developer with emerging interest in GenAI, building scalable web applications and learning in public.",
+    images: {
+      url: "https://www.snehasharma.me/og-image.png",
+      alt: "Sneha Sharma Portfolio",
+    },
   },
   alternates: {
     canonical: "https://www.snehasharma.me",
+    languages: {
+      "en-US": "https://www.snehasharma.me",
+    },
   },
   category: "technology",
+  classification: "Portfolio Website",
+  other: {
+    "msapplication-TileColor": "#da532c",
+    "msapplication-config": "/favicon-images/browserconfig.xml",
+  },
 };
 
 const jsonLd = {
@@ -177,6 +203,7 @@ const jsonLd = {
         addressCountry: "India",
       },
       email: "mailto:celersneha@gmail.com",
+      telephone: "+91-87705-79552",
       sameAs: [
         "https://github.com/celersneha",
         "https://linkedin.com/in/celersneha",
@@ -188,6 +215,8 @@ const jsonLd = {
         "Backend Development",
         "Full Stack Development",
         "React.js",
+        "FastAPI",
+        "Livekit",
         "Next.js",
         "JavaScript",
         "TypeScript",
@@ -251,6 +280,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-10-01",
+          dateModified: "2024-12-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -264,6 +295,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-08-01",
+          dateModified: "2024-11-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -277,6 +310,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-06-01",
+          dateModified: "2024-09-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -290,6 +325,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-05-01",
+          dateModified: "2024-08-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -306,6 +343,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-04-01",
+          dateModified: "2024-07-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -319,6 +358,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-03-01",
+          dateModified: "2024-06-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -332,6 +373,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-02-01",
+          dateModified: "2024-05-01",
         },
         {
           "@type": "SoftwareApplication",
@@ -345,6 +388,8 @@ const jsonLd = {
           creator: {
             "@id": "https://www.snehasharma.me/#person",
           },
+          dateCreated: "2024-01-01",
+          dateModified: "2024-04-01",
         },
       ],
       gender: "Female",
@@ -362,7 +407,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://www.snehasharma.me/#website",
       url: "https://www.snehasharma.me",
-      name: "Sneha Sharma | Next.js + GenAI Developer",
+      name: "Sneha Sharma | Next.js & GenAI Developer",
       description:
         "Portfolio website showcasing full-stack web development projects, skills, and professional experience of Sneha Sharma",
       publisher: {
@@ -374,7 +419,12 @@ const jsonLd = {
           "https://www.snehasharma.me/projects?search={search_term_string}",
         "query-input": "required name=search_term_string",
       },
-      logo: "https://www.snehasharma.me/favicon.ico",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.snehasharma.me/favicon-images/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
+      },
       mainEntity: {
         "@id": "https://www.snehasharma.me/#person",
       },
@@ -390,6 +440,13 @@ const jsonLd = {
         "AI Integration",
         "Chrome Extensions",
       ],
+      inLanguage: "en-US",
+      dateCreated: "2024-01-01",
+      dateModified: "2025-01-26",
+      copyrightYear: 2025,
+      copyrightHolder: {
+        "@id": "https://www.snehasharma.me/#person",
+      },
     },
     {
       "@type": "ProfilePage",
@@ -407,7 +464,7 @@ const jsonLd = {
       },
       description:
         "Professional portfolio showcasing Sneha Sharma's expertise in full-stack web development, AI integration, and modern software engineering practices",
-      dateModified: "2025-01-15",
+      dateModified: "2025-01-26",
       datePublished: "2024-01-01",
       inLanguage: "en-US",
       audience: {
@@ -425,7 +482,12 @@ const jsonLd = {
       "@id": "https://www.snehasharma.me/#organization",
       name: "Sneha Sharma - Freelance Development",
       url: "https://www.snehasharma.me",
-      logo: "https://www.snehasharma.me/og-image.png",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.snehasharma.me/og-image.png",
+        width: 1200,
+        height: 630,
+      },
       description:
         "Freelance full-stack development services specializing in modern web technologies",
       founder: {
@@ -437,17 +499,34 @@ const jsonLd = {
       location: {
         "@type": "Place",
         name: "Indore, Madhya Pradesh, India",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "22.7196",
+          longitude: "75.8577",
+        },
       },
       contactPoint: {
         "@type": "ContactPoint",
         email: "celersneha@gmail.com",
+        telephone: "+91-87705-79552",
         contactType: "Business Inquiries",
         availableLanguage: ["English", "Hindi"],
+        areaServed: "Worldwide",
       },
       sameAs: [
         "https://github.com/celersneha",
         "https://linkedin.com/in/celersneha",
         "https://x.com/celersneha",
+      ],
+      foundingDate: "2024-01-01",
+      numberOfEmployees: 1,
+      serviceType: [
+        "Web Development",
+        "Full Stack Development",
+        "Frontend Development",
+        "Backend Development",
+        "AI Integration",
+        "Chrome Extension Development",
       ],
     },
     {
@@ -495,9 +574,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
-        {/* Favicons */}
+        {/* Preconnect to external domains for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+
+        {/* Favicons and Web App Manifest */}
         <link
           rel="icon"
           type="image/png"
@@ -532,6 +619,7 @@ export default function RootLayout({
           href="/favicon-images/favicon.ico"
           type="image/x-icon"
         />
+        <link rel="manifest" href="/favicon-images/site.webmanifest" />
 
         {/* JSON-LD Schema */}
         <script
@@ -539,23 +627,55 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* SEO extras */}
+        {/* SEO and Social Media Meta Tags */}
         <link rel="canonical" href="https://www.snehasharma.me" />
         <link rel="me" href="https://github.com/celersneha" />
         <link rel="me" href="https://linkedin.com/in/celersneha" />
+        <link rel="me" href="https://x.com/celersneha" />
+
+        {/* Geographic Meta Tags */}
         <meta name="geo.region" content="IN-MP" />
         <meta name="geo.placename" content="Indore" />
         <meta name="geo.position" content="22.7196;75.8577" />
         <meta name="ICBM" content="22.7196, 75.8577" />
+
+        {/* Microsoft Tiles */}
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta
+          name="msapplication-config"
+          content="/favicon-images/browserconfig.xml"
+        />
+
+        {/* Additional SEO Meta Tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Sneha Sharma Portfolio"
+        />
+
+        {/* Preload critical resources */}
+        <link rel="preload" href="/og-image.png" as="image" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <Toaster theme="system" position="bottom-right" closeButton={false} />
+        <Toaster
+          theme="system"
+          position="bottom-right"
+          closeButton={false}
+          richColors
+          expand={false}
+          duration={4000}
+        />
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="flex-1 flex flex-col min-h-screen md:ml-72">
-            <main className="flex-1">{children}</main>
+            <main className="flex-1" role="main">
+              {children}
+            </main>
           </div>
         </div>
       </body>
