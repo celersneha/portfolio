@@ -4,7 +4,7 @@ import projects from "@/lib/projects";
 export async function generateMetadata({
   params,
 }: {
-  params: { projectTitle: string };
+  params: Promise<{ projectTitle: string }>;
 }) {
   const awaitedParams = await params;
   const projectTitle = decodeURIComponent(awaitedParams.projectTitle);
@@ -53,7 +53,7 @@ export async function generateMetadata({
 export default async function ProjectPage({
   params,
 }: {
-  params: { projectTitle: string };
+  params: Promise<{ projectTitle: string }>;
 }) {
   const awaitedParams = await params;
   const projectTitle = decodeURIComponent(awaitedParams.projectTitle);
