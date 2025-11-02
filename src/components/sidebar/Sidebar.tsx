@@ -1,46 +1,44 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Home,
-  LayoutDashboard,
-  FolderGit2,
-  BookOpen,
-  User,
-  Mail as MailIcon,
-  Menu,
-  X,
-} from "lucide-react";
 import { BsTwitterX } from "react-icons/bs";
+import { LuLayoutDashboard, LuFolderGit2 } from "react-icons/lu";
+import {
+  FiHome,
+  FiBookOpen,
+  FiUser,
+  FiMail,
+  FiGithub,
+  FiLinkedin,
+} from "react-icons/fi";
 import { Button } from "@/components/ui/button";
+import { IoIosMenu } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 const navItems = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/projects", label: "Projects", icon: FolderGit2 },
-  { href: "/tech-stack", label: "Tech Stack", icon: BookOpen },
-  { href: "/about", label: "About", icon: User },
-  { href: "/contact", label: "Contact", icon: MailIcon },
+  { href: "/", label: "Home", icon: FiHome },
+  { href: "/dashboard", label: "Dashboard", icon: LuLayoutDashboard },
+  { href: "/projects", label: "Projects", icon: LuFolderGit2 },
+  { href: "/tech-stack", label: "Tech Stack", icon: FiBookOpen },
+  { href: "/about", label: "About", icon: FiUser },
+  { href: "/contact", label: "Contact", icon: FiMail },
 ];
 
 const socialLinks = [
   {
     href: "https://github.com/celersneha",
-    icon: Github,
+    icon: FiGithub,
     label: "GitHub",
   },
   {
     href: "https://linkedin.com/in/celersneha",
-    icon: Linkedin,
+    icon: FiLinkedin,
     label: "LinkedIn",
   },
-  { href: "mailto:celersneha@gmail.com", icon: Mail, label: "Email" },
+  { href: "mailto:celersneha@gmail.com", icon: FiMail, label: "Email" },
   {
     href: "https://x.com/celersneha",
     icon: BsTwitterX,
@@ -177,7 +175,7 @@ const Sidebar = () => {
           onClick={openMenu}
           aria-label="Open sidebar"
         >
-          <Menu className="w-6 h-6" />
+          <IoIosMenu className="w-6 h-6" />
         </Button>
       </div>
 
@@ -201,7 +199,7 @@ const Sidebar = () => {
                 onClick={closeMenu}
                 aria-label="Close sidebar"
               >
-                <X className="w-5 h-5" />
+                <IoClose className="w-5 h-5" />
               </Button>
             </div>
             {/* Profile Section */}

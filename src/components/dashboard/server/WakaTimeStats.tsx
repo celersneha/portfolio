@@ -1,5 +1,5 @@
 import { unstable_cache } from "next/cache";
-import { Clock } from "lucide-react";
+import { FiClock } from "react-icons/fi";
 import { fetchWakaTimeData, WakaTimeData } from "@/actions/dashboard/wakatime";
 
 const getWakaTimeStats = unstable_cache(fetchWakaTimeData, ["wakatime-stats"], {
@@ -20,7 +20,7 @@ export default async function WakaTimeStats() {
     <div className="space-y-4 rounded-xl shadow-lg border   p-6">
       <div className="flex items-center mb-4">
         <span className="mr-2 text-primary">
-          <Clock className="w-5 h-5" />
+          <FiClock className="w-5 h-5" />
         </span>
         <h2 className="text-2xl font-semibold ">Weekly Statistics</h2>
       </div>
