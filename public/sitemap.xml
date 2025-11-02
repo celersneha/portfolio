@@ -1,110 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
   <!-- Homepage -->
   <url>
     <loc>https://www.snehasharma.me/</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/favicon-images/android-chrome-512x512.png</image:loc>
+      <image:title>Sneha Sharma - Next.js and GenAI Developer</image:title>
+      <image:caption>Portfolio homepage of Sneha Sharma, Full Stack Developer</image:caption>
+    </image:image>
   </url>
   
-  <!-- Main Pages -->
-  <url>
-    <loc>https://www.snehasharma.me/home</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
+  <!-- About Page -->
   <url>
     <loc>https://www.snehasharma.me/about</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/favicon-images/android-chrome-192x192.png</image:loc>
+      <image:title>About Sneha Sharma</image:title>
+      <image:caption>Learn about Sneha's experience, skills, and professional journey</image:caption>
+    </image:image>
   </url>
   
+  <!-- Projects Listing -->
   <url>
     <loc>https://www.snehasharma.me/projects</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/favicon-images/android-chrome-512x512.png</image:loc>
+      <image:title>Projects by Sneha Sharma</image:title>
+      <image:caption>Explore impactful web development projects and applications</image:caption>
+    </image:image>
   </url>
   
+  <!-- Tech Stack -->
   <url>
     <loc>https://www.snehasharma.me/tech-stack</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/favicon-images/android-chrome-192x192.png</image:loc>
+      <image:title>Tech Stack - Sneha Sharma</image:title>
+      <image:caption>Technologies and tools used by Sneha for development</image:caption>
+    </image:image>
   </url>
   
+  <!-- Contact -->
   <url>
     <loc>https://www.snehasharma.me/contact</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/favicon-images/android-chrome-192x192.png</image:loc>
+      <image:title>Contact Sneha Sharma</image:title>
+      <image:caption>Get in touch for collaborations and project inquiries</image:caption>
+    </image:image>
   </url>
   
-  <url>
-    <loc>https://www.snehasharma.me/dashboard</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <!-- Individual Project Pages -->
+  <!-- Individual Project Pages with Images -->
   <url>
     <loc>https://www.snehasharma.me/projects/DevZoku</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/devzoku.png</image:loc>
+      <image:title>DevZoku - Hackathon Management Platform</image:title>
+      <image:caption>Modern hackathon platform with AI-powered team matching</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/InvisiFeed</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/invisifeed.png</image:loc>
+      <image:title>InvisiFeed - Anonymous Feedback Platform</image:title>
+      <image:caption>Revolutionary feedback platform with AI sentiment analysis</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/InactiTab</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/inactitab.png</image:loc>
+      <image:title>InactiTab - Chrome Extension</image:title>
+      <image:caption>Automatic tab management for improved browser performance</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/EduZen</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/eduzen.png</image:loc>
+      <image:title>EduZen - AI Learning Companion</image:title>
+      <image:caption>Personalized AI-powered education platform</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/PdfIQ</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/pdfiq.png</image:loc>
+      <image:title>PdfIQ - AI PDF Chat Application</image:title>
+      <image:caption>Chat with PDFs using AI and vector search capabilities</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/TickTask</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/ticktask.png</image:loc>
+      <image:title>TickTask - GraphQL Todo App</image:title>
+      <image:caption>Modern todo application with real-time GraphQL updates</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/RoastRadar</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/roastradar.png</image:loc>
+      <image:title>RoastRadar - Anonymous Messaging</image:title>
+      <image:caption>Anonymous messaging platform with AI-powered suggestions</image:caption>
+    </image:image>
   </url>
   
   <url>
     <loc>https://www.snehasharma.me/projects/CineHue</loc>
-    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.snehasharma.me/projects/cinehue.png</image:loc>
+      <image:title>CineHue - Movie Discovery App</image:title>
+      <image:caption>Modern movie discovery with real-time search capabilities</image:caption>
+    </image:image>
   </url>
+  
 </urlset>

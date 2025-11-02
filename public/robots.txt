@@ -1,21 +1,42 @@
 User-agent: *
 Allow: /
 
+# Main sitemap
 Sitemap: https://www.snehasharma.me/sitemap.xml
 
-# Allow all major search engines
+# Allow specific pages for better crawling
+Allow: /about
+Allow: /projects
+Allow: /tech-stack
+Allow: /contact
+
+# Block dashboard from public indexing (if it's private)
+Disallow: /dashboard
+
+# Allow all major search engines with specific rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot  
 Allow: /
+Crawl-delay: 2
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 2
 
 User-agent: DuckDuckBot
 Allow: /
-
-# Crawl-delay for less important bots
-User-agent: *
 Crawl-delay: 1
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# General crawl delay for other bots
+User-agent: *
+Crawl-delay: 3
