@@ -37,12 +37,12 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
   return (
     <motion.section
       id="projects"
-      className="py-20 relative z-0"
+      className="relative z-0 py-8 sm:py-12"
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 sm:px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
@@ -60,7 +60,7 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
               <Link
                 key={index}
                 href={`/projects/${project.title ?? index}`}
-                className="relative group block h-full border border-secondary rounded-lg "
+                className="relative group block h-full border border-peach-100 rounded-lg bg-white shadow-[0_2px_16px_0_rgba(245,182,196,0.08)] transition-all duration-300 overflow-hidden"
                 tabIndex={-1}
                 style={{ textDecoration: "none" }}
               >
@@ -93,7 +93,9 @@ export default function ProjectsClient({ projects }: ProjectsClientProps) {
                   </div>
                 </div>
                 {/* Project Content */}
-                <div className="flex flex-col flex-1 p-3">
+                <div className="flex flex-col flex-1 p-3 relative">
+                  {/* Pink rising gradient from bottom of card */}
+
                   <CardHeader className="p-0 mb-2">
                     <div className="flex items-center justify-between mb-1">
                       <Badge

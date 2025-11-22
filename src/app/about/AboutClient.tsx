@@ -28,13 +28,13 @@ export default function AboutClient() {
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="relative z-0 py-8"
+      className="relative z-0"
     >
       <div className="about-page max-w-4xl mx-auto px-2 sm:px-4 py-8 sm:py-12 space-y-12 sm:space-y-16 relative z-10">
         {/* Responsive: window style on md+, flex-col on mobile */}
-        <div className="md:bg-background md:border md:border-border md:rounded-xl md:shadow-lg md:overflow-hidden flex flex-col">
+        <div className="bg-white md:border md:border-border md:rounded-xl md:shadow-lg md:overflow-hidden flex flex-col">
           {/* Window top bar only on md+ */}
-          <div className="hidden md:flex items-center gap-2 px-4 py-2 border-b border-border bg-muted/60">
+          <div className="hidden md:flex items-center gap-2 px-4 py-2 border-b border-border ">
             <span className="w-3 h-3 rounded-full bg-red-400" />
             <span className="w-3 h-3 rounded-full bg-yellow-400" />
             <span className="w-3 h-3 rounded-full bg-green-400" />
@@ -45,7 +45,7 @@ export default function AboutClient() {
                 className={`px-4 py-2 rounded-l-md font-semibold transition-colors ${
                   tab === "intro"
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-rose-50  cursor-pointer"
                 }`}
                 onClick={() => handleTabChange("intro")}
                 type="button"
@@ -56,7 +56,7 @@ export default function AboutClient() {
                 className={`px-4 py-2 font-semibold transition-colors ${
                   tab === "resume"
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-rose-50  cursor-pointer"
                 }`}
                 onClick={() => handleTabChange("resume")}
                 type="button"
@@ -67,7 +67,7 @@ export default function AboutClient() {
                 className={`px-4 py-2 rounded-r-md font-semibold transition-colors ${
                   tab === "experience"
                     ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-rose-50 cursor-pointer"
                 }`}
                 onClick={() => handleTabChange("experience")}
                 type="button"
@@ -82,7 +82,7 @@ export default function AboutClient() {
               className={`px-4 py-2 rounded-t-md font-semibold transition-colors ${
                 tab === "intro"
                   ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-accent"
+                  : "bg-muted text-muted-foreground hover:bg-rose-50"
               }`}
               onClick={() => handleTabChange("intro")}
               type="button"
@@ -93,7 +93,7 @@ export default function AboutClient() {
               className={`px-4 py-2 font-semibold transition-colors ${
                 tab === "resume"
                   ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-accent"
+                  : "bg-muted text-muted-foreground hover:bg-rose-50"
               }`}
               onClick={() => handleTabChange("resume")}
               type="button"
@@ -104,7 +104,7 @@ export default function AboutClient() {
               className={`px-4 py-2 rounded-b-md font-semibold transition-colors ${
                 tab === "experience"
                   ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-accent"
+                  : "bg-muted text-muted-foreground hover:bg-rose-50"
               }`}
               onClick={() => handleTabChange("experience")}
               type="button"
@@ -211,7 +211,7 @@ export default function AboutClient() {
                 >
                   <div className="flex flex-col items-start w-full">
                     <Link
-                      href="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/view?usp=sharing"
+                      href={process.env.NEXT_PUBLIC_PDF_URL || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block md:ml-0 w-[max-content] sm:w-auto"
@@ -231,7 +231,7 @@ export default function AboutClient() {
                     {/* Resume Preview */}
                     <div className="w-full mt-8 rounded-lg overflow-hidden border border-border ">
                       <iframe
-                        src="https://drive.google.com/file/d/1OKOeDkdh_rIUOBBsw7w6xjzBY5GBvDGA/preview"
+                        src={process.env.NEXT_PUBLIC_PDF_URL}
                         title="Sneha Resume Preview"
                         width="100%"
                         height="500"

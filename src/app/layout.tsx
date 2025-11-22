@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/sidebar/Sidebar";
+import Header from "@/components/header/Header";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -662,6 +662,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
+        {/* Decorative rectangles in corners */}
+        <div className="pointer-events-none fixed inset-0">
+          {/* Bottom left */}
+          <div className="absolute bottom-0 left-0 flex flex-col gap-2 mb-2">
+            <div className="w-32 h-2 bg-pink-50 rounded-lg" />
+            <div className="w-16 h-2 bg-pink-200 rounded-lg" />
+            <div className="w-24 h-2 bg-pink-100 rounded-lg" />
+          </div>
+          {/* Bottom right */}
+          <div className="absolute bottom-0 right-0 flex flex-col gap-2 items-end mb-2">
+            <div className="w-32 h-2 bg-pink-50 rounded-lg" />
+            <div className="w-16 h-2 bg-pink-200 rounded-lg" />
+            <div className="w-24 h-2 bg-pink-100 rounded-lg" />
+          </div>
+        </div>
         <Toaster
           theme="system"
           position="bottom-right"
@@ -670,14 +685,13 @@ export default function RootLayout({
           expand={false}
           duration={4000}
         />
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <div className="flex-1 flex flex-col min-h-screen md:ml-72">
-            <main className="flex-1" role="main">
-              {children}
-            </main>
-          </div>
-        </div>
+        <Header />
+        <main
+          className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 lg:pt-24 mb-10"
+          role="main"
+        >
+          {children}
+        </main>
       </body>
     </html>
   );

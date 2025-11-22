@@ -7,6 +7,7 @@ import Image from "next/image";
 import { CiImageOn as ImageIcon } from "react-icons/ci";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { techIcons } from "@/components/TechStackMapping";
 
 interface Project {
   title: string;
@@ -24,7 +25,7 @@ interface Project {
 export default function ProjectDetailClient({ project }: { project: Project }) {
   return (
     <motion.section
-      className="py-16 min-h-screen bg-background px-8"
+      className="py-8 sm:py-12 min-h-screen bg-background px-4 sm:px-8"
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
@@ -72,8 +73,13 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
         <h4 className="font-semibold mb-2">Technologies Used</h4>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, i) => (
-            <Badge key={i} variant="outline" className="text-xs">
-              {tech}
+            <Badge
+              key={i}
+              variant="outline"
+              className="text-xs flex items-center gap-1 px-3 py-2"
+            >
+              <span className="text-sm">{techIcons[tech]}</span>
+              <span>{tech}</span>
             </Badge>
           ))}
         </div>

@@ -25,7 +25,7 @@ const skills = [
       "Tailwind CSS",
       "HTML5",
       "CSS3",
-      "Shadcn",
+      "Shadcn", // mapped to SiShadcnui
     ],
   },
   {
@@ -39,6 +39,9 @@ const skills = [
       "WebSocket",
       "JWT",
       "FastAPI",
+      "REST API", // mapped to FiGlobe
+      "JWT Auth", // mapped to SiGithubactions or custom
+      "Cron Jobs", // mapped to BiGitBranch or custom
     ],
   },
   {
@@ -49,7 +52,12 @@ const skills = [
   {
     category: "GenAI",
     icon: "Code" as "Code",
-    technologies: ["LangChain.js", "Vector Databases", "RAG Pipelines"],
+    technologies: [
+      "LangChain.js",
+      "Vector Databases",
+      "RAG Pipelines",
+      "Embeddings",
+    ],
   },
   {
     category: "Tools & Services",
@@ -62,6 +70,13 @@ const skills = [
       "GitHub Actions",
       "Browser APIs",
       "Digital Ocean",
+      "CI/CD", // mapped to SiGithubactions or custom
+      "Nginx", // fallback icon
+      "Vercel",
+      // Figma, Canva, Notion: fallback icon or custom
+      "Figma",
+      "Canva",
+      "Notion",
     ],
   },
 ];

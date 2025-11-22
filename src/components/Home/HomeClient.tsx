@@ -22,63 +22,108 @@ const HomeClient = ({ skills }: HomeClientProps) => {
   return (
     <motion.section
       id="home"
-      className=" flex items-center justify-center py-10"
+      className="flex items-center justify-center min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)]"
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <div className="w-full h-full flex items-center justify-center px-4 py-8 pt-12 sm:pt-16">
+      <div className="w-full h-full flex items-center justify-center px-2 py-6 sm:px-4 sm:py-8">
         {/* Content */}
-        <div className="space-y-10 sm:space-y-2 md:space-y-2 animate-fade-in-up  md:text-left max-w-4xl">
-          <div className="space-y-6 sm:space-y-8 md:space-y-4">
+        <div className="space-y-8 sm:space-y-10 md:space-y-2 animate-fade-in-up text-left max-w-4xl w-full">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             <div className="flex flex-wrap gap-2 justify-start">
               <Badge
-                variant="secondary"
-                className="text-sm flex items-center justify-center"
+                variant="outline"
+                className="text-rose-500 border-rose-100 bg-white shadow-sm px-3 py-1 rounded-lg text-xs sm:text-sm lg:text-base xl:text-lg font-semibold"
               >
-                👋 Available for new opportunities
+                <span className="text-lg">👋</span>
+                Available for new opportunities
               </Badge>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Hi, I'm <span className="text-primary">Sneha</span>
             </h1>
 
-            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl text-muted-foreground">
-              Full Stack Developer
+            <h2 className="text-sm xs:text-base sm:text-xl text-muted-foreground">
+              Driven by <span className="text-primary font-bold">purpose</span>,
+              powered by <span className="text-primary  font-bold">code</span>
             </h2>
 
-            <p className="text-lg sm:text-xl md:text-lg text-muted-foreground max-w-lg md:max-w-lg  leading-relaxed text-left">
-              I build exceptional digital experiences with modern technologies,
-              specializing in scalable web applications, with a remote-first
-              work preference.
+            <p className="text-xs xs:text-sm sm:text-base md:text-xl xl:text-2xl text-muted-foreground max-w-4xl leading-relaxed text-left">
+              Building exceptional digital experiences with modern technologies,
+              specializing in scalable web applications.
             </p>
           </div>
 
-          {/* Skills */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-2 justify-start">
-            {skills.map((skill, index) => (
-              <Badge
-                key={skill.name}
-                variant="outline"
-                className="text-sm animate-fade-in-up flex items-center"
-                style={{ animationDelay: `${index * 0.1 + 0.5}s` }}
-              >
-                {techIcons[skill.name]}
-                {skill.name}
-              </Badge>
-            ))}
-            <Badge
-              variant="outline"
-              className="text-xs font-semibold animate-fade-in-up flex items-center"
-              style={{ animationDelay: `${skills.length * 0.1 + 0.5}s` }}
-            >
-              ...and many more
-            </Badge>
+          {/* Skills - Infinite Auto Scroll Animation */}
+          <div className="py-6 mt-4 w-full overflow-hidden">
+            <style>{`
+              @keyframes infiniteScroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-50%)); }
+              }
+              
+              .skills-infinite-scroll {
+                display: flex;
+                gap: 1rem;
+                animation: infiniteScroll 45s linear infinite;
+                width: fit-content;
+              }
+
+              .skills-wave:hover{
+                animation-play-state: paused;
+                }
+              
+              .skill-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1rem;
+                border-radius: 0.75rem;
+                border: 1.5px solid #E5E7EB;
+                background: #FFFFFF;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #2D2D2D;
+                white-space: nowrap;
+                flex-shrink: 0;
+                transition: all 0.2s ease;
+              }
+              
+              .skill-item:hover {
+                border-color: #F43F5E;
+                background: #FAF9F6;
+                box-shadow: 0 4px 12px rgba(244, 63, 94, 0.1);
+              }
+              
+              .skill-icon {
+                font-size: 1.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            `}</style>
+            <div className="relative w-full overflow-hidden">
+              <div className="skills-infinite-scroll">
+                {/* Duplicate skills for seamless infinite loop */}
+                {[...skills, ...skills].map((skill, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-card text-xs xs:text-sm sm:text-base lg:text-[1rem] xl:text-[1.05rem] font-medium text-foreground whitespace-nowrap flex-shrink-0 transition-all duration-200 hover:border-primary hover:bg-background hover:shadow-md"
+                  >
+                    <span className="text-base xs:text-lg sm:text-xl flex items-center justify-center">
+                      {techIcons[skill.name]}
+                    </span>
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-start pt-4 sm:pt-6 md:pt-0 mt-5">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start pt-2 sm:pt-6 md:pt-0 mt-4">
             <Link
               href="/projects"
               className="group w-full sm:w-auto text-base"
@@ -97,11 +142,19 @@ const HomeClient = ({ skills }: HomeClientProps) => {
               </Button>
             </Link>
           </div>
-          <div className="md:hidden flex-col gap-8 flex">
-            {/* Separator and Connect With Me */}
-            <div className="mt-2">
-              <hr className="border-t max-w-xs border-border my-6" />
-              <div className="flex flex-col  gap-2">
+
+          {/* Connection Icons (Desktop & Mobile) */}
+          <div className="flex flex-col gap-6 mt-4">
+            <div>
+              {/* Pink gradient line with fading opacity left to right */}
+              <div
+                className="my-6 max-w-xs h-1 rounded-full"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #F43F5E 0%, rgba(244,63,94,0.2) 100%)",
+                }}
+              />
+              <div className="flex flex-col gap-2">
                 <span className="text-sm text-muted-foreground font-medium mb-2">
                   Connect with me
                 </span>
@@ -127,7 +180,7 @@ const HomeClient = ({ skills }: HomeClientProps) => {
                     <FaLinkedin className="w-6 h-6" />
                   </Link>
                   <Link
-                    href="https://twitter.com/celersneha"
+                    href="https://x.com/celersneha"
                     passHref
                     target="_blank"
                     rel="noopener noreferrer"
